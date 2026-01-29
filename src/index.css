@@ -1,0 +1,185 @@
+/* JABA Platform Design System - Matching Main Dashboard */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Saira+Condensed:wght@700&family=Saira+Extra+Condensed:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  /* JABA Colors - Voltage Black & White */
+  --jaba-bg-primary: #0A0A0E;
+  --jaba-bg-secondary: #111115;
+  --jaba-bg-card: rgba(17, 17, 21, 0.8);
+  --jaba-text-primary: #FFFFFF;
+  --jaba-text-secondary: rgba(255, 255, 255, 0.7);
+  --jaba-text-muted: rgba(255, 255, 255, 0.4);
+  --jaba-border: rgba(255, 255, 255, 0.1);
+  --jaba-border-hover: rgba(255, 255, 255, 0.2);
+  --jaba-accent: #E2F500;
+  --jaba-accent-dim: rgba(226, 245, 0, 0.15);
+  --jaba-accent-medium: rgba(226, 245, 0, 0.4);
+  --jaba-gradient: linear-gradient(135deg, #E2F500 0%, #B8CC00 100%);
+
+  /* Typography */
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Volt Yellow Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(226, 245, 0, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(226, 245, 0, 0.3);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 245, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--jaba-bg-primary);
+  color: var(--jaba-text-primary);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Selection */
+::selection {
+  background: var(--jaba-accent);
+  color: var(--jaba-bg-primary);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--jaba-accent);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: calc(100% - 4px); }
+}
+
+@keyframes checkmarkDraw {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes progressBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--jaba-accent), 0 0 10px var(--jaba-accent); }
+  50% { box-shadow: 0 0 20px var(--jaba-accent), 0 0 30px var(--jaba-accent); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes growUp {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
