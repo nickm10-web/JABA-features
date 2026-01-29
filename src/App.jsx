@@ -155,17 +155,17 @@ const Icons = {
 // Real data from JABA dashboard
 const contacts = [
   { name: 'Maya Lopez', title: 'Sr. Brand Partnerships Manager', company: 'NIKE', industry: 'Apparel', email: 'maya.l@nike.com', phone: '(503) 555-0142', avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
-  { name: 'Cameron Vance', title: 'Global Partnerships Director', company: 'NIKE', industry: 'Apparel', email: 'c.vance@nike.com', phone: '(503) 555-0198', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
-  { name: 'Michael Thompson', title: 'Digital Marketing Director', company: 'NIKE', industry: 'Apparel', email: 'm.thompson@nike.com', phone: '(503) 555-0167', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop' },
+  { name: 'Cameron Vance', title: 'Global Partnerships Director', company: 'ADIDAS', industry: 'Apparel', email: 'c.vance@adidas.com', phone: '(971) 555-0198', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
+  { name: 'Michael Thompson', title: 'Digital Marketing Director', company: 'GATORADE', industry: 'Beverage', email: 'm.thompson@gatorade.com', phone: '(312) 555-0167', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop' },
   { name: 'Elena Rossi', title: 'Athlete Marketing Manager', company: 'NEW BALANCE', industry: 'Apparel', email: 'e.rossi@newbalance.com', phone: '(617) 555-0134', avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop' },
   { name: 'Jason Wu', title: 'Head of Sports Partnerships', company: 'PEPSI', industry: 'Beverage', email: 'j.wu@pepsi.com', phone: '(914) 555-0189', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop' },
 ]
 
 const athletes = [
-  { id: '1', name: 'BRODY DALTON', sport: 'Football', school: 'University of Alabama', marketability: 76, followers: '45K', engagement: '8.2%', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop' },
-  { id: '2', name: 'JUDITH MOKOBE', sport: "Women's Track & Field", school: 'University of Alabama', marketability: 72, followers: '32K', engagement: '11.4%', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop' },
-  { id: '3', name: 'ERIS LESTER', sport: "Women's Basketball", school: 'University of Alabama', marketability: 69, followers: '28K', engagement: '9.8%', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop' },
-  { id: '4', name: 'LAILA WILCOX', sport: "Women's Track & Field", school: 'University of Alabama', marketability: 68, followers: '25K', engagement: '12.1%', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop' },
+  { id: '1', name: 'BRODY DALTON', sport: 'Football', school: 'University of JABA', marketability: 76, followers: '45K', engagement: '8.2%', avatar: '/brody-dalton.jpg' },
+  { id: '2', name: 'JUDITH MOKOBE', sport: "Women's Track & Field", school: 'University of JABA', marketability: 72, followers: '32K', engagement: '11.4%', avatar: '/judith-mokobe.jpg' },
+  { id: '3', name: 'ERIS LESTER', sport: "Women's Basketball", school: 'University of JABA', marketability: 69, followers: '28K', engagement: '9.8%', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop' },
+  { id: '4', name: 'LAILA WILCOX', sport: "Women's Track & Field", school: 'University of JABA', marketability: 68, followers: '25K', engagement: '12.1%', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop' },
 ]
 
 // Feature data
@@ -281,25 +281,26 @@ function FeatureCard({ feature, onClick }) {
 function AthleteCard({ athlete }) {
   return (
     <div className="athlete-card">
-      <div className="athlete-card__header">
-        <div className="athlete-card__image">
-          <img src={athlete.avatar} alt={athlete.name} />
-        </div>
+      <div className="athlete-card__image">
+        <img src={athlete.avatar} alt={athlete.name} />
+      </div>
+
+      <div className="athlete-card__info-row">
+        <img src="/jaba-logo.png" alt="University Logo" className="athlete-card__school-logo" />
         <div className="athlete-card__info">
-          <h3 className="athlete-card__name">
-            {athlete.name}
-            <Icons.Star />
-          </h3>
+          <h3 className="athlete-card__name">{athlete.name}</h3>
           <p className="athlete-card__sport">{athlete.sport} | {athlete.school}</p>
         </div>
       </div>
 
       <div className="marketability">
         <div className="marketability__header">
-          <Icons.Trophy className="marketability__icon" />
-          <span className="marketability__label">Marketability</span>
+          <div className="marketability__label-group">
+            <Icons.Trophy />
+            <span className="marketability__label">MARKETABILITY</span>
+          </div>
+          <div className="marketability__score">{athlete.marketability}</div>
         </div>
-        <div className="marketability__score">{athlete.marketability}</div>
         <div className="marketability__bar">
           <div className="marketability__fill" style={{ width: `${athlete.marketability}%` }} />
         </div>
@@ -385,9 +386,16 @@ function ComplianceContent({ activeSubFeature }) {
           </p>
           <div className="logo-recognition">
             <div className="logo-scanner">
-              <div className="logo-scanner__image">
-                <Icons.Image />
-              </div>
+              <img
+                src="/jaba-logo.png"
+                alt="JABA Logo"
+                style={{
+                  maxWidth: '140px',
+                  maxHeight: '140px',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 4px 12px rgba(226, 245, 0, 0.3))'
+                }}
+              />
               <div className="logo-scanner__beam" />
               <div className="logo-scanner__checkmark">
                 <Icons.Check />
@@ -395,8 +403,8 @@ function ComplianceContent({ activeSubFeature }) {
             </div>
             <div className="recognition-status">
               <p className="recognition-status__label">Logo Recognized</p>
-              <p className="recognition-status__text">University of Texas</p>
-              <p className="recognition-status__detail">Compliance check passed - Logo usage approved</p>
+              <p className="recognition-status__text">University of JABA</p>
+              <p className="recognition-status__detail">Brand logo detected - Ready for compliance verification</p>
             </div>
           </div>
         </div>
@@ -557,12 +565,11 @@ function RelationshipsContent({ activeSubFeature }) {
               </select>
             </div>
             <div className="filter-group">
-              <label>Company</label>
+              <label>Alumni</label>
               <select className="filter-select">
-                <option>All Companies</option>
-                <option>Nike</option>
-                <option>Adidas</option>
-                <option>Gatorade</option>
+                <option>All</option>
+                <option>Yes</option>
+                <option>No</option>
               </select>
             </div>
             <div className="filter-group">
@@ -593,7 +600,13 @@ function RelationshipsContent({ activeSubFeature }) {
               <p className="reminder-card__title">Follow up with Maya Lopez (Nike)</p>
               <p className="reminder-card__time">Due in 2 hours</p>
             </div>
-            <button className="reminder-card__action">Mark Done</button>
+            <div className="reminder-card__actions">
+              <button className="reminder-card__action reminder-card__action--secondary">
+                <Icons.Sparkles />
+                Draft Follow Up
+              </button>
+              <button className="reminder-card__action">Mark Done</button>
+            </div>
           </div>
           <div className="reminder-card">
             <div className="reminder-card__icon"><Icons.Bell /></div>
@@ -601,7 +614,13 @@ function RelationshipsContent({ activeSubFeature }) {
               <p className="reminder-card__title">Send proposal to Nike team</p>
               <p className="reminder-card__time">Due tomorrow</p>
             </div>
-            <button className="reminder-card__action">Mark Done</button>
+            <div className="reminder-card__actions">
+              <button className="reminder-card__action reminder-card__action--secondary">
+                <Icons.Sparkles />
+                Draft Proposal
+              </button>
+              <button className="reminder-card__action">Mark Done</button>
+            </div>
           </div>
           <div className="reminder-card">
             <div className="reminder-card__icon"><Icons.Bell /></div>
@@ -609,7 +628,13 @@ function RelationshipsContent({ activeSubFeature }) {
               <p className="reminder-card__title">Contract review with Pepsi</p>
               <p className="reminder-card__time">Due in 3 days</p>
             </div>
-            <button className="reminder-card__action">Mark Done</button>
+            <div className="reminder-card__actions">
+              <button className="reminder-card__action reminder-card__action--secondary">
+                <Icons.Sparkles />
+                Draft Email
+              </button>
+              <button className="reminder-card__action">Mark Done</button>
+            </div>
           </div>
         </div>
       )
@@ -620,6 +645,28 @@ function RelationshipsContent({ activeSubFeature }) {
           <p className="feature-section__description">
             Visualize and manage your brand relationship pipeline from lead to close.
           </p>
+          <div className="pipeline-controls">
+            <div className="pipeline-filters">
+              <select className="filter-select" style={{ width: 'auto', minWidth: '160px' }}>
+                <option>All Deal Types</option>
+                <option>Endorsements</option>
+                <option>Social Media</option>
+                <option>Events</option>
+              </select>
+              <select className="filter-select" style={{ width: 'auto', minWidth: '160px' }}>
+                <option>All Deal Sizes</option>
+                <option>$0 - $10K</option>
+                <option>$10K - $50K</option>
+                <option>$50K+</option>
+              </select>
+            </div>
+            <button className="search-btn" style={{ padding: '10px 20px', fontSize: '0.85rem', whiteSpace: 'nowrap' }}>
+              <span style={{ width: '16px', height: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Icons.Target />
+              </span>
+              Customize Pipeline
+            </button>
+          </div>
           <div className="pipeline">
             {Object.entries(pipelineData).map(([stage, items]) => (
               <div className="pipeline-column" key={stage}>
@@ -664,35 +711,135 @@ function AthleteToolsContent({ activeSubFeature }) {
         <div className="feature-section" key="media-kits">
           <h2 className="feature-section__title">Media Kits</h2>
           <p className="feature-section__description">
-            Professional media kit templates ready to share with brands and sponsors.
+            Comprehensive one-page media kits with school branding, social metrics, and brand partnership opportunities. Share via link or export as PDF.
           </p>
-          <div className="campaign-grid">
-            <div className="campaign-card">
-              <div className="campaign-card__header">
-                <div>
-                  <p className="campaign-card__title">Standard Media Kit</p>
-                  <p className="campaign-card__brand">Basic athlete overview</p>
+          <div className="media-kit-showcase">
+            <div className="media-kit-preview">
+              <div className="media-kit-preview__header">
+                <div className="media-kit-preview__logo-box">
+                  <img src="/jaba-logo.png" alt="School Logo" className="media-kit-preview__logo" />
+                  <span>University of JABA</span>
+                </div>
+                <span className="media-kit-preview__subtitle">ATHLETE MEDIA KIT</span>
+              </div>
+
+              <div className="media-kit-preview__hero">
+                <div className="media-kit-preview__athlete-img">
+                  <img src="/brody-dalton.jpg" alt="Brody Dalton" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+                </div>
+                <h3 className="media-kit-preview__athlete-name">BRODY DALTON</h3>
+                <div className="media-kit-preview__badges">
+                  <span>Football</span>
+                  <span>Quarterback</span>
+                  <span>Junior</span>
+                </div>
+                <div className="media-kit-preview__emv">$2,800 Avg EMV/Post</div>
+              </div>
+
+              <div className="media-kit-preview__sections">
+                <div className="media-kit-preview__section">
+                  <Icons.BarChart />
+                  <span>Social Metrics</span>
+                </div>
+                <div className="media-kit-preview__section">
+                  <Icons.Target />
+                  <span>Athletic Stats</span>
+                </div>
+                <div className="media-kit-preview__section">
+                  <Icons.Sparkles />
+                  <span>Partnership Ideas</span>
+                </div>
+                <div className="media-kit-preview__section">
+                  <Icons.Image />
+                  <span>Posts Gallery</span>
+                </div>
+                <div className="media-kit-preview__section">
+                  <Icons.DollarSign />
+                  <span>Rate Card</span>
                 </div>
               </div>
-              <div className="campaign-card__progress">
-                <div className="progress-bar">
-                  <div className="progress-bar__fill" style={{ width: '100%' }} />
-                </div>
-                <span className="progress-label">Ready to use</span>
+
+              <div className="media-kit-preview__footer">
+                <Icons.FileText />
+                <span>Created with JABA</span>
               </div>
             </div>
-            <div className="campaign-card">
-              <div className="campaign-card__header">
-                <div>
-                  <p className="campaign-card__title">Premium Media Kit</p>
-                  <p className="campaign-card__brand">Detailed analytics included</p>
+
+            <div className="media-kit-details">
+              <h3 className="media-kit-details__title">What's Included</h3>
+              <div className="media-kit-details__grid">
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.Building />
+                  </div>
+                  <h4>School Branding</h4>
+                  <p>Custom header with school colors, logo, and official branding</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.Users />
+                  </div>
+                  <h4>Athlete Hero Section</h4>
+                  <p>Professional photo, name, sport, position, and average EMV metrics</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.BarChart />
+                  </div>
+                  <h4>Social Metrics Dashboard</h4>
+                  <p>Followers, engagement rate, likes, comments across all platforms</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.Target />
+                  </div>
+                  <h4>Athletic Statistics</h4>
+                  <p>Performance stats, rankings, and achievements in grid format</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.Sparkles />
+                  </div>
+                  <h4>AI Partnership Ideas</h4>
+                  <p>Custom campaign concepts generated for specific brands</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.Image />
+                  </div>
+                  <h4>Content Showcase</h4>
+                  <p>Recent posts gallery with engagement metrics and performance data</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.DollarSign />
+                  </div>
+                  <h4>Rate Card</h4>
+                  <p>Pricing per deliverable: Instagram posts, stories, TikTok videos</p>
+                </div>
+
+                <div className="media-kit-detail-card">
+                  <div className="media-kit-detail-card__icon">
+                    <Icons.FileText />
+                  </div>
+                  <h4>Shareable & Exportable</h4>
+                  <p>Share via link or export as PDF for offline distribution</p>
                 </div>
               </div>
-              <div className="campaign-card__progress">
-                <div className="progress-bar">
-                  <div className="progress-bar__fill" style={{ width: '100%' }} />
-                </div>
-                <span className="progress-label">Ready to use</span>
+
+              <div className="media-kit-actions">
+                <button className="media-kit-btn media-kit-btn--primary">
+                  <Icons.Eye /> View Sample Media Kit
+                </button>
+                <button className="media-kit-btn media-kit-btn--secondary">
+                  <Icons.Sparkles /> Create New Media Kit
+                </button>
               </div>
             </div>
           </div>
@@ -1470,7 +1617,10 @@ function App() {
     <div className="app">
       <div className="container">
         <header className="header">
-          <h1 className="header__title">JABA Platform — Feature Overview</h1>
+          <div className="header__logo-container">
+            <img src="/jaba-logo.png" alt="JABA" className="header__logo" />
+            <h1 className="header__title">Feature Overview</h1>
+          </div>
           <p className="header__subtitle">
             A comprehensive view of all JABA features and capabilities in one place
           </p>
