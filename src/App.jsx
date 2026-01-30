@@ -150,6 +150,35 @@ const Icons = {
       <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
     </svg>
   ),
+  Download: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+  ),
+  Share: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="3"/>
+      <circle cx="6" cy="12" r="3"/>
+      <circle cx="18" cy="19" r="3"/>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+    </svg>
+  ),
+  Lightbulb: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 18h6"/>
+      <path d="M10 22h4"/>
+      <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7Z"/>
+    </svg>
+  ),
+  Edit: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+    </svg>
+  ),
 }
 
 // Real data from JABA dashboard
@@ -171,78 +200,47 @@ const athletes = [
 // Feature data
 const features = [
   {
-    id: 'compliance',
-    icon: Icons.Clipboard,
-    title: 'Compliance & Operations',
-    description: 'Tools that support compliance and operational workflows.',
+    id: 'roster',
+    icon: Icons.Users,
+    title: 'Manage Your Roster',
+    description: 'Search, filter, view athlete marketability scores, and monitor performance metrics in one place.',
     subFeatures: [
-      { id: 'nil-go', title: 'NIL Go / Cross Checker' },
-      { id: 'logo-recognition', title: 'School Logo Recognition' },
-      { id: 'notes', title: 'Notes' },
-      { id: 'todo-list', title: 'Daily To-Do List' },
+      { id: 'profiles', title: 'Athlete Profiles & Marketability Scoring' },
+      { id: 'media-kits', title: 'Professional Media Kits' },
+      { id: 'content-performance', title: 'Track Content Performance' },
+    ]
+  },
+  {
+    id: 'campaigns',
+    icon: Icons.Target,
+    title: 'Execute Campaigns & Deals',
+    description: 'Create, manage, and track all NIL campaigns end-to-end for any athlete.',
+    subFeatures: [
+      { id: 'campaign-builder', title: 'Campaign Builder & Management' },
+      { id: 'contracts', title: 'Contract & Document Management' },
+      { id: 'task-tracking', title: 'Task & Workflow Tracking' },
+    ]
+  },
+  {
+    id: 'analytics',
+    icon: Icons.BarChart,
+    title: 'Analytics & Performance',
+    description: 'Centralized dashboard showing ROI across all athletes and deals with real-time performance insights.',
+    subFeatures: [
+      { id: 'metrics-dashboard', title: 'Real-time Metrics Dashboard' },
+      { id: 'ai-insights', title: 'AI Campaign Insights' },
+      { id: 'rankings', title: 'Performance Rankings & Leaderboards' },
     ]
   },
   {
     id: 'relationships',
-    icon: Icons.Users,
-    title: 'Managing Relationships',
-    description: 'See every brand that\'s ever done a deal with an athlete—plus verified contact info. Manage all your connections from brands, schools, partnerships and more.',
-    subFeatures: [
-      { id: 'contact-database', title: 'Confirmed Brand Contact Info Database' },
-      { id: 'discover-connections', title: 'Discover New Connections' },
-      { id: 'reminders', title: 'Relationship Follow-up Reminders' },
-      { id: 'pipeline', title: 'Pipeline View' },
-    ]
-  },
-  {
-    id: 'athlete-tools',
     icon: Icons.Smile,
-    title: 'Athlete Tools',
-    description: 'Athlete professional assets that showcase their social performance.',
+    title: 'Build Relationships',
+    description: 'Track all brand and partner relationships, manage verified contacts, and view complete deal history with every organization.',
     subFeatures: [
-      { id: 'profiles', title: 'Athlete Profiles' },
-      { id: 'media-kits', title: 'Media Kits' },
-      { id: 'interactive-kit', title: 'Interactive Media Kit' },
-      { id: 'content-ideas', title: 'Content Ideas' },
-      { id: 'caption-ideas', title: 'Caption Ideas' },
-      { id: 'background-page', title: 'Athlete Background Page' },
-      { id: 'showcases', title: 'Content & Social Showcases' },
-    ]
-  },
-  {
-    id: 'metrics',
-    icon: Icons.BarChart,
-    title: 'Metrics & Data',
-    description: 'A centralized analytics hub showing athlete content performance overtime across platforms in a single place.',
-    subFeatures: [
-      { id: 'performance', title: 'Performance Metrics' },
-      { id: 'platforms', title: 'Platform Breakdowns' },
-      { id: 'engagement', title: 'Engagement Analytics' },
-      { id: 'trends', title: 'Trend Analysis' },
-    ]
-  },
-  {
-    id: 'brand-deals',
-    icon: Icons.Building,
-    title: 'Brand Deals & Campaign Management',
-    description: 'Plan, create, execute, and manage campaigns end to end for any athlete.',
-    subFeatures: [
-      { id: 'campaign-planning', title: 'Campaign Planning Tools' },
-      { id: 'execution', title: 'Execution Tracking' },
-      { id: 'monitoring', title: 'Performance Monitoring' },
-      { id: 'templates', title: 'Campaign Templates' },
-    ]
-  },
-  {
-    id: 'ai-tools',
-    icon: Icons.Sparkles,
-    title: 'AI JABA Tools',
-    description: 'AI-powered tools that automate content creation.',
-    subFeatures: [
-      { id: 'content-gen', title: 'AI Content Generation' },
-      { id: 'captions', title: 'Automated Caption Writing' },
-      { id: 'suggestions', title: 'Content Suggestions' },
-      { id: 'recommendations', title: 'Smart Recommendations' },
+      { id: 'brand-discovery', title: 'Brand Discovery & CRM' },
+      { id: 'contact-management', title: 'Contact Management' },
+      { id: 'deal-history', title: 'Deal History & Tracking' },
     ]
   },
   {
@@ -251,10 +249,9 @@ const features = [
     title: 'Above The Cap',
     description: 'Comprehensive financial planning and deal management tools.',
     subFeatures: [
-      { id: 'financial-planning', title: 'Financial Planning' },
-      { id: 'deal-management', title: 'Deal Management' },
-      { id: 'contract-tracking', title: 'Contract Tracking' },
-      { id: 'revenue', title: 'Revenue Analytics' },
+      { id: 'rate-cards', title: 'Deal Valuation & Rate Cards' },
+      { id: 'budgets', title: 'Spending Plans & Budgets' },
+      { id: 'reporting', title: 'Financial Reporting' },
     ]
   },
 ]
@@ -326,151 +323,6 @@ function AthleteCard({ athlete }) {
 }
 
 // Sub-feature content components
-function ComplianceContent({ activeSubFeature }) {
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Review Nike contract terms', completed: false },
-    { id: 2, text: 'Schedule meeting with compliance team', completed: true },
-    { id: 3, text: 'Update athlete documentation', completed: false },
-  ])
-  const [newTodo, setNewTodo] = useState('')
-  const [notes, setNotes] = useState('')
-
-  const addTodo = () => {
-    if (newTodo.trim()) {
-      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }])
-      setNewTodo('')
-    }
-  }
-
-  const toggleTodo = (id) => {
-    setTodos(todos.map(t => t.id === id ? { ...t, completed: !t.completed } : t))
-  }
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(t => t.id !== id))
-  }
-
-  switch (activeSubFeature) {
-    case 'nil-go':
-      return (
-        <div className="feature-section" key="nil-go">
-          <h2 className="feature-section__title">NIL Go / Cross Checker</h2>
-          <p className="feature-section__description">
-            Upload a screenshot of the NIL Go spreadsheet to cross-reference deal statuses and ensure compliance across all athlete agreements.
-          </p>
-          <div className="logo-recognition">
-            <div className="logo-scanner" style={{ height: '240px' }}>
-              <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.4)' }}>
-                <div style={{ width: '48px', height: '48px', margin: '0 auto' }}>
-                  <Icons.FileText />
-                </div>
-                <p style={{ marginTop: '12px', fontSize: '0.9rem' }}>Drop spreadsheet screenshot here</p>
-                <p style={{ fontSize: '0.8rem' }}>or click to browse</p>
-              </div>
-              <div className="logo-scanner__beam" />
-            </div>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '16px' }}>
-              <button className="search-btn" style={{ padding: '12px 24px' }}>
-                Upload & Analyze
-              </button>
-            </div>
-          </div>
-        </div>
-      )
-    case 'logo-recognition':
-      return (
-        <div className="feature-section" key="logo-recognition">
-          <h2 className="feature-section__title">School Logo Recognition</h2>
-          <p className="feature-section__description">
-            See which brand deals use logos and track logo usage across campaigns with AI-powered detection.
-          </p>
-          <div className="logo-recognition">
-            <div className="logo-scanner">
-              <img
-                src="/jaba-logo.png"
-                alt="JABA Logo"
-                style={{
-                  maxWidth: '140px',
-                  maxHeight: '140px',
-                  objectFit: 'contain',
-                  filter: 'drop-shadow(0 4px 12px rgba(226, 245, 0, 0.3))'
-                }}
-              />
-              <div className="logo-scanner__beam" />
-              <div className="logo-scanner__checkmark">
-                <Icons.Check />
-              </div>
-            </div>
-            <div className="recognition-status">
-              <p className="recognition-status__label">Logo Recognized</p>
-              <p className="recognition-status__text">University of JABA</p>
-              <p className="recognition-status__detail">Brand logo detected - Ready for compliance verification</p>
-            </div>
-          </div>
-        </div>
-      )
-    case 'notes':
-      return (
-        <div className="feature-section" key="notes">
-          <h2 className="feature-section__title">Notes</h2>
-          <p className="feature-section__description">
-            Keep track of important information, meeting notes, and compliance details.
-          </p>
-          <div className="notes-section">
-            <textarea
-              className="notes-area"
-              placeholder="Start typing your notes here..."
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-            />
-          </div>
-        </div>
-      )
-    case 'todo-list':
-      return (
-        <div className="feature-section" key="todo-list">
-          <h2 className="feature-section__title">Daily To-Do List</h2>
-          <p className="feature-section__description">
-            Manage your daily compliance and operational tasks efficiently.
-          </p>
-          <div className="todo-list">
-            <div className="todo-input-group">
-              <input
-                type="text"
-                className="todo-input"
-                placeholder="Add a new task..."
-                value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && addTodo()}
-              />
-              <button className="todo-add-btn" onClick={addTodo}>Add</button>
-            </div>
-            <div className="todo-items">
-              {todos.map(todo => (
-                <div className="todo-item" key={todo.id}>
-                  <div
-                    className={`todo-item__checkbox ${todo.completed ? 'todo-item__checkbox--checked' : ''}`}
-                    onClick={() => toggleTodo(todo.id)}
-                  >
-                    {todo.completed && <Icons.Check />}
-                  </div>
-                  <span className={`todo-item__text ${todo.completed ? 'todo-item__text--completed' : ''}`}>
-                    {todo.text}
-                  </span>
-                  <button className="todo-item__delete" onClick={() => deleteTodo(todo.id)}>
-                    <Icons.Trash />
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )
-    default:
-      return null
-  }
-}
-
 function RelationshipsContent({ activeSubFeature }) {
   const pipelineData = {
     'New Lead': [
@@ -492,182 +344,49 @@ function RelationshipsContent({ activeSubFeature }) {
   }
 
   switch (activeSubFeature) {
-    case 'contact-database':
+    case 'brand-discovery':
       return (
-        <div className="feature-section" key="contact-database">
-          <h2 className="feature-section__title">Confirmed Brand Contact Info Database</h2>
+        <div className="feature-section" key="brand-discovery">
+          <h2 className="feature-section__title">Brand Discovery & CRM</h2>
           <p className="feature-section__description">
-            Access verified contact information for brand representatives who have worked with athletes.
-          </p>
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Job Title</th>
-                <th>Company</th>
-                <th>Email</th>
-                <th>Phone</th>
-              </tr>
-            </thead>
-            <tbody>
-              {contacts.map((contact, i) => (
-                <tr key={i}>
-                  <td>
-                    <div className="contact-name-cell">
-                      <img src={contact.avatar} alt={contact.name} className="contact-avatar" />
-                      {contact.name}
-                    </div>
-                  </td>
-                  <td>{contact.title}</td>
-                  <td>{contact.company}</td>
-                  <td>{contact.email}</td>
-                  <td>{contact.phone}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )
-    case 'discover-connections':
-      return (
-        <div className="feature-section" key="discover-connections">
-          <h2 className="feature-section__title">Discover New Connections</h2>
-          <p className="feature-section__description">
-            Find new brand contacts and partnership opportunities using advanced filters.
+            Search and discover new potential brand sponsors, then track all interactions and opportunities in one organized CRM.
           </p>
           <div className="filter-section">
             <div className="filter-group">
               <label>Industry</label>
               <select className="filter-select">
                 <option>All Industries</option>
-                <option>Apparel</option>
+                <option>Apparel & Footwear</option>
                 <option>Beverages</option>
                 <option>Technology</option>
                 <option>Finance</option>
+                <option>Automotive</option>
               </select>
             </div>
             <div className="filter-group">
-              <label>Job Title</label>
+              <label>Deal Size</label>
               <select className="filter-select">
-                <option>All Titles</option>
-                <option>Marketing Manager</option>
-                <option>Brand Director</option>
-                <option>Partnerships Lead</option>
+                <option>All Sizes</option>
+                <option>$5K - $25K</option>
+                <option>$25K - $100K</option>
+                <option>$100K+</option>
               </select>
             </div>
             <div className="filter-group">
-              <label>Department</label>
+              <label>Partnership Type</label>
               <select className="filter-select">
-                <option>All Departments</option>
-                <option>Marketing</option>
-                <option>Sales</option>
-                <option>Partnerships</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Alumni</label>
-              <select className="filter-select">
-                <option>All</option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Location</label>
-              <select className="filter-select">
-                <option>All Locations</option>
-                <option>New York</option>
-                <option>Los Angeles</option>
-                <option>Chicago</option>
+                <option>All Types</option>
+                <option>Social Media</option>
+                <option>Endorsement</option>
+                <option>Appearance</option>
+                <option>Product Collab</option>
               </select>
             </div>
           </div>
           <button className="search-btn">
-            <Icons.Search /> Search
+            <Icons.Search /> Discover Brands
           </button>
-        </div>
-      )
-    case 'reminders':
-      return (
-        <div className="feature-section" key="reminders">
-          <h2 className="feature-section__title">Relationship Follow-up Reminders</h2>
-          <p className="feature-section__description">
-            Never miss an important follow-up with automated relationship reminders.
-          </p>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.Bell /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Follow up with Maya Lopez (Nike)</p>
-              <p className="reminder-card__time">Due in 2 hours</p>
-            </div>
-            <div className="reminder-card__actions">
-              <button className="reminder-card__action reminder-card__action--secondary">
-                <Icons.Sparkles />
-                Draft Follow Up
-              </button>
-              <button className="reminder-card__action">Mark Done</button>
-            </div>
-          </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.Bell /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Send proposal to Nike team</p>
-              <p className="reminder-card__time">Due tomorrow</p>
-            </div>
-            <div className="reminder-card__actions">
-              <button className="reminder-card__action reminder-card__action--secondary">
-                <Icons.Sparkles />
-                Draft Proposal
-              </button>
-              <button className="reminder-card__action">Mark Done</button>
-            </div>
-          </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.Bell /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Contract review with Pepsi</p>
-              <p className="reminder-card__time">Due in 3 days</p>
-            </div>
-            <div className="reminder-card__actions">
-              <button className="reminder-card__action reminder-card__action--secondary">
-                <Icons.Sparkles />
-                Draft Email
-              </button>
-              <button className="reminder-card__action">Mark Done</button>
-            </div>
-          </div>
-        </div>
-      )
-    case 'pipeline':
-      return (
-        <div className="feature-section" key="pipeline">
-          <h2 className="feature-section__title">Pipeline View</h2>
-          <p className="feature-section__description">
-            Visualize and manage your brand relationship pipeline from lead to close.
-          </p>
-          <div className="pipeline-controls">
-            <div className="pipeline-filters">
-              <select className="filter-select" style={{ width: 'auto', minWidth: '160px' }}>
-                <option>All Deal Types</option>
-                <option>Endorsements</option>
-                <option>Social Media</option>
-                <option>Events</option>
-              </select>
-              <select className="filter-select" style={{ width: 'auto', minWidth: '160px' }}>
-                <option>All Deal Sizes</option>
-                <option>$0 - $10K</option>
-                <option>$10K - $50K</option>
-                <option>$50K+</option>
-              </select>
-            </div>
-            <button className="search-btn" style={{ padding: '10px 20px', fontSize: '0.85rem', whiteSpace: 'nowrap' }}>
-              <span style={{ width: '16px', height: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Icons.Target />
-              </span>
-              Customize Pipeline
-            </button>
-          </div>
-          <div className="pipeline">
+          <div className="pipeline" style={{ marginTop: '24px' }}>
             {Object.entries(pipelineData).map(([stage, items]) => (
               <div className="pipeline-column" key={stage}>
                 <div className="pipeline-column__header">
@@ -685,19 +404,146 @@ function RelationshipsContent({ activeSubFeature }) {
           </div>
         </div>
       )
+    case 'contact-management':
+      return (
+        <div className="feature-section" key="contact-management">
+          <h2 className="feature-section__title">Contact Management</h2>
+          <p className="feature-section__description">
+            Store verified brand contacts, track communication history, manage relationships, and know who to reach out to for new opportunities.
+          </p>
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Last Contact</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts.map((contact, i) => (
+                <tr key={i}>
+                  <td>
+                    <div className="contact-name-cell">
+                      <img src={contact.avatar} alt={contact.name} className="contact-avatar" />
+                      {contact.name}
+                    </div>
+                  </td>
+                  <td>{contact.title}</td>
+                  <td>{contact.company}</td>
+                  <td>{['2 days ago', '1 week ago', 'Yesterday'][i % 3]}</td>
+                  <td>
+                    <span className={`campaign-card__status campaign-card__status--${['active', 'pending', 'completed'][i % 3]}`}>
+                      {['Active', 'Follow Up', 'Closed'][i % 3]}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+            <button className="search-btn">Add New Contact</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Import Contacts</button>
+          </div>
+        </div>
+      )
+    case 'deal-history':
+      return (
+        <div className="feature-section" key="deal-history">
+          <h2 className="feature-section__title">Deal History & Tracking</h2>
+          <p className="feature-section__description">
+            See the complete history of every brand partnership - which athletes have worked with which companies, past deal terms, and relationship insights.
+          </p>
+          <div className="filter-section">
+            <div className="filter-group">
+              <label>Brand</label>
+              <select className="filter-select">
+                <option>All Brands</option>
+                <option>Nike</option>
+                <option>Red Bull</option>
+                <option>Gatorade</option>
+              </select>
+            </div>
+            <div className="filter-group">
+              <label>Athlete</label>
+              <select className="filter-select">
+                <option>All Athletes</option>
+                <option>Brody Dalton</option>
+                <option>Judith Mokobe</option>
+              </select>
+            </div>
+            <div className="filter-group">
+              <label>Year</label>
+              <select className="filter-select">
+                <option>All Time</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+              </select>
+            </div>
+          </div>
+          <table className="data-table" style={{ marginTop: '20px' }}>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Athlete</th>
+                <th>Deal Type</th>
+                <th>Value</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nike</td>
+                <td>Brody Dalton</td>
+                <td>Endorsement</td>
+                <td>$75,000</td>
+                <td>Jan 2025</td>
+                <td><span className="campaign-card__status campaign-card__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td>Red Bull</td>
+                <td>Judith Mokobe</td>
+                <td>Social Media</td>
+                <td>$25,000</td>
+                <td>Dec 2024</td>
+                <td><span className="campaign-card__status campaign-card__status--completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>Gatorade</td>
+                <td>Brody Dalton</td>
+                <td>Appearance</td>
+                <td>$15,000</td>
+                <td>Nov 2024</td>
+                <td><span className="campaign-card__status campaign-card__status--completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td>Beats</td>
+                <td>Judith Mokobe</td>
+                <td>Product Collab</td>
+                <td>$30,000</td>
+                <td>Oct 2024</td>
+                <td><span className="campaign-card__status campaign-card__status--completed">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )
     default:
       return null
   }
 }
 
-function AthleteToolsContent({ activeSubFeature }) {
+function RosterContent({ activeSubFeature }) {
   switch (activeSubFeature) {
     case 'profiles':
       return (
         <div className="feature-section" key="profiles">
-          <h2 className="feature-section__title">Athlete Profiles</h2>
+          <h2 className="feature-section__title">Athlete Profiles & Marketability Scoring</h2>
           <p className="feature-section__description">
-            Comprehensive athlete profiles showcasing stats, social performance, and marketability scores.
+            View all athletes with detailed profiles, filter by sport/position, and see real-time marketability scores.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
             {athletes.slice(0, 2).map(athlete => (
@@ -709,232 +555,208 @@ function AthleteToolsContent({ activeSubFeature }) {
     case 'media-kits':
       return (
         <div className="feature-section" key="media-kits">
-          <h2 className="feature-section__title">Media Kits</h2>
+          <h2 className="feature-section__title">Professional Media Kits</h2>
           <p className="feature-section__description">
-            Comprehensive one-page media kits with school branding, social metrics, and brand partnership opportunities. Share via link or export as PDF.
+            AI-powered media kit builder that generates brand-specific partnership ideas, custom rate cards, and professional PDF exports ready to send to sponsors.
           </p>
-          <div className="media-kit-showcase">
-            <div className="media-kit-preview">
-              <div className="media-kit-preview__header">
-                <div className="media-kit-preview__logo-box">
-                  <img src="/jaba-logo.png" alt="School Logo" className="media-kit-preview__logo" />
-                  <span>University of JABA</span>
-                </div>
-                <span className="media-kit-preview__subtitle">ATHLETE MEDIA KIT</span>
-              </div>
 
-              <div className="media-kit-preview__hero">
-                <div className="media-kit-preview__athlete-img">
-                  <img src="/brody-dalton.jpg" alt="Brody Dalton" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }} />
+          {/* 5-Step Flow */}
+          <div className="media-kit-flow">
+            {/* Step 1: Brand Selection */}
+            <div className="flow-step">
+              <div className="flow-step__number">1</div>
+              <div className="flow-step__content">
+                <h3 className="flow-step__title">Brand Selection</h3>
+                <p className="flow-step__caption">Pick a brand or search for one</p>
+                <div className="brand-search-box">
+                  <div className="search-input">
+                    <Icons.Search />
+                    <input type="text" placeholder="Which brand do you want to pitch?" readOnly />
+                  </div>
+                  <div className="brand-buttons">
+                    <button className="brand-btn">Nike</button>
+                    <button className="brand-btn">Adidas</button>
+                    <button className="brand-btn">Gatorade</button>
+                    <button className="brand-btn">Beats</button>
+                    <button className="brand-btn">Red Bull</button>
+                    <button className="brand-btn">Chipotle</button>
+                  </div>
                 </div>
-                <h3 className="media-kit-preview__athlete-name">BRODY DALTON</h3>
-                <div className="media-kit-preview__badges">
-                  <span>Football</span>
-                  <span>Quarterback</span>
-                  <span>Junior</span>
-                </div>
-                <div className="media-kit-preview__emv">$2,800 Avg EMV/Post</div>
-              </div>
-
-              <div className="media-kit-preview__sections">
-                <div className="media-kit-preview__section">
-                  <Icons.BarChart />
-                  <span>Social Metrics</span>
-                </div>
-                <div className="media-kit-preview__section">
-                  <Icons.Target />
-                  <span>Athletic Stats</span>
-                </div>
-                <div className="media-kit-preview__section">
-                  <Icons.Sparkles />
-                  <span>Partnership Ideas</span>
-                </div>
-                <div className="media-kit-preview__section">
-                  <Icons.Image />
-                  <span>Posts Gallery</span>
-                </div>
-                <div className="media-kit-preview__section">
-                  <Icons.DollarSign />
-                  <span>Rate Card</span>
-                </div>
-              </div>
-
-              <div className="media-kit-preview__footer">
-                <Icons.FileText />
-                <span>Created with JABA</span>
               </div>
             </div>
 
-            <div className="media-kit-details">
-              <h3 className="media-kit-details__title">What's Included</h3>
-              <div className="media-kit-details__grid">
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.Building />
+            {/* Step 2: Brand Intelligence */}
+            <div className="flow-step">
+              <div className="flow-step__number">2</div>
+              <div className="flow-step__content">
+                <h3 className="flow-step__title">Brand Intelligence</h3>
+                <p className="flow-step__caption">AI analyzes brand values and positioning</p>
+                <div className="brand-info-card">
+                  <div className="brand-info-header">
+                    <div className="brand-logo-placeholder">
+                      <Icons.Building />
+                    </div>
+                    <h4>Chipotle</h4>
                   </div>
-                  <h4>School Branding</h4>
-                  <p>Custom header with school colors, logo, and official branding</p>
-                </div>
-
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.Users />
+                  <div className="brand-info-grid">
+                    <div className="brand-info-item">
+                      <span className="brand-info-label">Industry:</span>
+                      <span className="brand-info-value">Fast Casual Dining</span>
+                    </div>
+                    <div className="brand-info-item">
+                      <span className="brand-info-label">Brand Positioning:</span>
+                      <span className="brand-info-value">Real food for real athletes</span>
+                    </div>
+                    <div className="brand-info-item">
+                      <span className="brand-info-label">Target Audience:</span>
+                      <span className="brand-info-value">Health-conscious consumers, athletes, young adults</span>
+                    </div>
+                    <div className="brand-info-item">
+                      <span className="brand-info-label">Brand Values:</span>
+                      <span className="brand-info-value">Fresh ingredients, Customization, Sustainability, Real food</span>
+                    </div>
                   </div>
-                  <h4>Athlete Hero Section</h4>
-                  <p>Professional photo, name, sport, position, and average EMV metrics</p>
                 </div>
+              </div>
+            </div>
 
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.BarChart />
+            {/* Step 3: AI Partnership Ideas */}
+            <div className="flow-step">
+              <div className="flow-step__number">3</div>
+              <div className="flow-step__content">
+                <h3 className="flow-step__title">AI Partnership Ideas</h3>
+                <p className="flow-step__caption">AI generates custom campaign concepts tailored to this brand</p>
+                <div className="partnership-ideas">
+                  <div className="partnership-card">
+                    <div className="partnership-card__header">
+                      <Icons.Lightbulb />
+                      <span className="partnership-card__format">Story</span>
+                    </div>
+                    <h4 className="partnership-card__title">Field to Fork: Sustainability Touchdown</h4>
+                    <p className="partnership-card__description">Highlight the connection between sustainable food and peak athletic performance through behind-the-scenes training content.</p>
                   </div>
-                  <h4>Social Metrics Dashboard</h4>
-                  <p>Followers, engagement rate, likes, comments across all platforms</p>
-                </div>
-
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.Target />
+                  <div className="partnership-card">
+                    <div className="partnership-card__header">
+                      <Icons.Lightbulb />
+                      <span className="partnership-card__format">Event</span>
+                    </div>
+                    <h4 className="partnership-card__title">Real Food, Real Performance Challenge</h4>
+                    <p className="partnership-card__description">Host a campus event where students try Chipotle's performance bowls and compete in mini athletic challenges.</p>
                   </div>
-                  <h4>Athletic Statistics</h4>
-                  <p>Performance stats, rankings, and achievements in grid format</p>
-                </div>
-
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.Sparkles />
+                  <div className="partnership-card">
+                    <div className="partnership-card__header">
+                      <Icons.Lightbulb />
+                      <span className="partnership-card__format">Story</span>
+                    </div>
+                    <h4 className="partnership-card__title">Power Packed: Knighten's Nutrition Playbook</h4>
+                    <p className="partnership-card__description">Share weekly meal prep featuring Chipotle ingredients that fuel game-day performance and recovery.</p>
                   </div>
-                  <h4>AI Partnership Ideas</h4>
-                  <p>Custom campaign concepts generated for specific brands</p>
-                </div>
-
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.Image />
+                  <div className="partnership-card">
+                    <div className="partnership-card__header">
+                      <Icons.Lightbulb />
+                      <span className="partnership-card__format">Post</span>
+                    </div>
+                    <h4 className="partnership-card__title">Customization Champions</h4>
+                    <p className="partnership-card__description">Showcase how athletes customize their Chipotle bowls for different training phases—strength, endurance, recovery.</p>
                   </div>
-                  <h4>Content Showcase</h4>
-                  <p>Recent posts gallery with engagement metrics and performance data</p>
                 </div>
+              </div>
+            </div>
 
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
-                    <Icons.DollarSign />
+            {/* Step 4: Finalize & Customize */}
+            <div className="flow-step">
+              <div className="flow-step__number">4</div>
+              <div className="flow-step__content">
+                <h3 className="flow-step__title">Finalize & Customize</h3>
+                <p className="flow-step__caption">Customize header, rate cards, and selected partnership ideas</p>
+                <div className="media-kit-mini-preview">
+                  <div className="mini-preview-header">
+                    <img src="/jaba-logo.png" alt="School Logo" className="mini-preview-logo" />
+                    <span className="mini-preview-label">Custom Header</span>
                   </div>
-                  <h4>Rate Card</h4>
-                  <p>Pricing per deliverable: Instagram posts, stories, TikTok videos</p>
+                  <div className="mini-preview-sections">
+                    <div className="mini-preview-section">
+                      <Icons.Users />
+                      <span>Athlete Info</span>
+                    </div>
+                    <div className="mini-preview-section">
+                      <Icons.BarChart />
+                      <span>Social Metrics</span>
+                    </div>
+                    <div className="mini-preview-section">
+                      <Icons.Sparkles />
+                      <span>Partnership Ideas</span>
+                    </div>
+                    <div className="mini-preview-section">
+                      <Icons.DollarSign />
+                      <span>Rate Card</span>
+                    </div>
+                  </div>
+                  <div className="mini-preview-actions">
+                    <button className="mini-preview-btn">
+                      <Icons.Edit /> Customize
+                    </button>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <div className="media-kit-detail-card">
-                  <div className="media-kit-detail-card__icon">
+            {/* Step 5: Export & Share */}
+            <div className="flow-step">
+              <div className="flow-step__number">5</div>
+              <div className="flow-step__content">
+                <h3 className="flow-step__title">Export & Share</h3>
+                <p className="flow-step__caption">Download as PDF or share instantly with brand partners</p>
+                <div className="export-preview">
+                  <div className="export-preview__document">
                     <Icons.FileText />
+                    <span className="export-preview__title">Brody_Dalton_Chipotle_MediaKit.pdf</span>
+                    <span className="export-preview__badge">Shareable & Exportable</span>
                   </div>
-                  <h4>Shareable & Exportable</h4>
-                  <p>Share via link or export as PDF for offline distribution</p>
+                  <div className="export-actions">
+                    <button className="export-btn export-btn--primary">
+                      <Icons.Share /> Share via Link
+                    </button>
+                    <button className="export-btn export-btn--secondary">
+                      <Icons.Download /> Export as PDF
+                    </button>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="media-kit-actions">
-                <button className="media-kit-btn media-kit-btn--primary">
-                  <Icons.Eye /> View Sample Media Kit
-                </button>
-                <button className="media-kit-btn media-kit-btn--secondary">
-                  <Icons.Sparkles /> Create New Media Kit
-                </button>
-              </div>
+          {/* Key Callout Box */}
+          <div className="media-kit-callout">
+            <div className="callout-icon">
+              <Icons.Sparkles />
             </div>
-          </div>
-        </div>
-      )
-    case 'interactive-kit':
-      return (
-        <div className="feature-section" key="interactive-kit">
-          <h2 className="feature-section__title">Interactive Media Kit</h2>
-          <p className="feature-section__description">
-            Build customizable, interactive media kits that brands can explore.
-          </p>
-          <div className="filter-section">
-            <div className="filter-group">
-              <label>Template Style</label>
-              <select className="filter-select">
-                <option>Modern Dark</option>
-                <option>Clean Light</option>
-                <option>Bold Colors</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Sections to Include</label>
-              <select className="filter-select">
-                <option>All Sections</option>
-                <option>Stats Only</option>
-                <option>Portfolio Only</option>
-              </select>
-            </div>
-          </div>
-          <button className="search-btn">Create Interactive Kit</button>
-        </div>
-      )
-    case 'content-ideas':
-      return (
-        <div className="feature-section" key="content-ideas">
-          <h2 className="feature-section__title">Content Ideas</h2>
-          <p className="feature-section__description">
-            AI-generated content ideas tailored to the athlete&apos;s brand and audience.
-          </p>
-          <div className="campaign-grid">
-            {['Behind-the-scenes training day', 'Game day preparation routine', 'Fan Q&A session', 'Brand collaboration teaser'].map((idea, i) => (
-              <div className="campaign-card" key={i}>
-                <div className="campaign-card__header">
-                  <div>
-                    <p className="campaign-card__title">{idea}</p>
-                    <p className="campaign-card__brand">Estimated engagement: High</p>
-                  </div>
+            <div className="callout-content">
+              <h3 className="callout-title">From brand selection to professional pitch deck in minutes — powered by AI</h3>
+              <div className="callout-stats">
+                <div className="callout-stat">
+                  <Icons.TrendingUp />
+                  <span>Saves 2-3 hours of manual kit creation</span>
+                </div>
+                <div className="callout-stat">
+                  <Icons.Target />
+                  <span>Increases partnership pitch acceptance rate</span>
+                </div>
+                <div className="callout-stat">
+                  <Icons.Check />
+                  <span>One click to send to multiple brands</span>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      )
-    case 'caption-ideas':
-      return (
-        <div className="feature-section" key="caption-ideas">
-          <h2 className="feature-section__title">Caption Ideas</h2>
-          <p className="feature-section__description">
-            Ready-to-use caption suggestions for social media posts.
-          </p>
-          <div className="ai-generator">
-            <div className="ai-output">
-              <p className="ai-output__label">Generated Captions</p>
-              <div className="ai-output__content">
-                <p style={{ marginBottom: '12px' }}>&quot;Game day energy is different. Ready to leave it all on the field. &quot;</p>
-                <p style={{ marginBottom: '12px' }}>&quot;Another day, another chance to be great. Let&apos;s work.&quot;</p>
-                <p>&quot;Grateful for every opportunity. This journey is just beginning.&quot;</p>
-              </div>
             </div>
           </div>
         </div>
       )
-    case 'background-page':
+    case 'content-performance':
       return (
-        <div className="feature-section" key="background-page">
-          <h2 className="feature-section__title">Athlete Background Page</h2>
+        <div className="feature-section" key="content-performance">
+          <h2 className="feature-section__title">Track Content Performance</h2>
           <p className="feature-section__description">
-            Build a professional background page highlighting achievements, story, and values.
-          </p>
-          <div className="notes-section">
-            <textarea
-              className="notes-area"
-              placeholder="Write the athlete's story, achievements, and background..."
-              defaultValue="Marcus Williams is a standout wide receiver at the University of Texas, known for his explosive speed and clutch performances. Born and raised in Houston, Texas, Marcus has been passionate about football since age 5..."
-            />
-          </div>
-        </div>
-      )
-    case 'showcases':
-      return (
-        <div className="feature-section" key="showcases">
-          <h2 className="feature-section__title">Content & Social Showcases</h2>
-          <p className="feature-section__description">
-            Curate and display the best content and social media highlights.
+            See which content themes resonate most with audiences - track top posts, engagement rates, and social media performance across your roster.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -943,14 +765,52 @@ function AthleteToolsContent({ activeSubFeature }) {
               <p className="metric-card__change metric-card__change--positive">+15% vs avg</p>
             </div>
             <div className="metric-card">
+              <p className="metric-card__label">Avg Engagement Rate</p>
+              <p className="metric-card__value">8.7%</p>
+              <p className="metric-card__change metric-card__change--positive">+2.3% this month</p>
+            </div>
+            <div className="metric-card">
               <p className="metric-card__label">Total Shares</p>
               <p className="metric-card__value">48.2K</p>
               <p className="metric-card__change metric-card__change--positive">+23% vs avg</p>
             </div>
-            <div className="metric-card">
-              <p className="metric-card__label">Avg Engagement</p>
-              <p className="metric-card__value">8.7%</p>
-              <p className="metric-card__change metric-card__change--positive">+5% vs avg</p>
+          </div>
+          <div className="campaign-grid" style={{ marginTop: '24px' }}>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Game Day Content</p>
+                  <p className="campaign-card__brand">Highest performing theme</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">12.4% Eng</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Training & Workout</p>
+                  <p className="campaign-card__brand">Strong audience resonance</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">9.8% Eng</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Behind The Scenes</p>
+                  <p className="campaign-card__brand">Growing trend</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">7.2% Eng</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Brand Partnerships</p>
+                  <p className="campaign-card__brand">Sponsored content</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">6.1% Eng</span>
+              </div>
             </div>
           </div>
         </div>
@@ -960,7 +820,10 @@ function AthleteToolsContent({ activeSubFeature }) {
   }
 }
 
-function MetricsContent({ activeSubFeature }) {
+function AnalyticsContent({ activeSubFeature }) {
+  const [sortBy, setSortBy] = useState('Marketability Score')
+  const [filterBy, setFilterBy] = useState('All Athletes')
+
   const chartData = [
     { label: 'Mon', height: '60%' },
     { label: 'Tue', height: '80%' },
@@ -971,13 +834,43 @@ function MetricsContent({ activeSubFeature }) {
     { label: 'Sun', height: '95%' },
   ]
 
+  // Athletes data for rankings
+  const athletesData = [
+    { name: 'Brody Dalton', sport: 'Football', marketability: 76, engagement: 8.2, followers: 145000, emv: 42000 },
+    { name: 'Judith Mokobe', sport: 'Track & Field', marketability: 72, engagement: 11.4, followers: 98000, emv: 38000 },
+    { name: 'Marcus Johnson', sport: 'Basketball', marketability: 68, engagement: 9.1, followers: 182000, emv: 51000 },
+    { name: 'Sarah Chen', sport: 'Volleyball', marketability: 65, engagement: 7.8, followers: 76000, emv: 28000 },
+    { name: 'Tyler Brooks', sport: 'Baseball', marketability: 62, engagement: 6.5, followers: 54000, emv: 22000 },
+  ]
+
+  // Filter athletes by sport
+  const filteredAthletes = filterBy === 'All Athletes'
+    ? athletesData
+    : athletesData.filter(athlete => athlete.sport === filterBy)
+
+  // Sort athletes based on selected criteria
+  const sortedAthletes = [...filteredAthletes].sort((a, b) => {
+    switch (sortBy) {
+      case 'Marketability Score':
+        return b.marketability - a.marketability
+      case 'Engagement Rate':
+        return b.engagement - a.engagement
+      case 'Follower Count':
+        return b.followers - a.followers
+      case 'EMV':
+        return b.emv - a.emv
+      default:
+        return 0
+    }
+  })
+
   switch (activeSubFeature) {
-    case 'performance':
+    case 'metrics-dashboard':
       return (
-        <div className="feature-section" key="performance">
-          <h2 className="feature-section__title">Performance Metrics</h2>
+        <div className="feature-section" key="metrics-dashboard">
+          <h2 className="feature-section__title">Real-time Metrics Dashboard</h2>
           <p className="feature-section__description">
-            Track overall content performance across all platforms.
+            Track likes, engagement rates, shares, and follower growth across all athletes' social media in one centralized view.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -1018,93 +911,157 @@ function MetricsContent({ activeSubFeature }) {
           </div>
         </div>
       )
-    case 'platforms':
+    case 'ai-insights':
       return (
-        <div className="feature-section" key="platforms">
-          <h2 className="feature-section__title">Platform Breakdowns</h2>
+        <div className="feature-section" key="ai-insights">
+          <h2 className="feature-section__title">AI Campaign Insights</h2>
           <p className="feature-section__description">
-            Detailed analytics for each social media platform.
+            Get AI-powered analysis of your campaign performance — understand what's working, what's not, and get optimization recommendations.
           </p>
-          <div className="metrics-grid">
-            <div className="metric-card">
-              <p className="metric-card__label">Instagram</p>
-              <p className="metric-card__value">4.2M</p>
-              <p className="metric-card__change metric-card__change--positive">Followers</p>
+
+          {/* AI Insights Example Card */}
+          <div className="ai-insights-example">
+            <div className="ai-insights-example__header">
+              <div className="ai-insights-example__badge">
+                <Icons.Sparkles />
+                <span>AI-Generated Analysis</span>
+              </div>
+              <h3 className="ai-insights-example__title">Campaign Performance Analysis: Nike Fall Campaign</h3>
             </div>
-            <div className="metric-card">
-              <p className="metric-card__label">TikTok</p>
-              <p className="metric-card__value">2.8M</p>
-              <p className="metric-card__change metric-card__change--positive">Followers</p>
+
+            <div className="ai-insights-example__metrics">
+              <h4 className="ai-insights-example__section-title">Key Metrics</h4>
+              <div className="ai-metrics-grid">
+                <div className="ai-metric-item">
+                  <span className="ai-metric-item__label">Engagement Rate</span>
+                  <div className="ai-metric-item__value-row">
+                    <span className="ai-metric-item__value">8.2%</span>
+                    <span className="ai-metric-item__trend ai-metric-item__trend--up">↑ 23% vs avg</span>
+                  </div>
+                </div>
+                <div className="ai-metric-item">
+                  <span className="ai-metric-item__label">Reach</span>
+                  <div className="ai-metric-item__value-row">
+                    <span className="ai-metric-item__value">487K</span>
+                    <span className="ai-metric-item__trend ai-metric-item__trend--up">↑ 15% vs similar</span>
+                  </div>
+                </div>
+                <div className="ai-metric-item">
+                  <span className="ai-metric-item__label">Share Rate</span>
+                  <div className="ai-metric-item__value-row">
+                    <span className="ai-metric-item__value">12.3%</span>
+                    <span className="ai-metric-item__trend ai-metric-item__trend--up">↑ 8% vs last quarter</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="metric-card">
-              <p className="metric-card__label">Twitter/X</p>
-              <p className="metric-card__value">1.1M</p>
-              <p className="metric-card__change metric-card__change--positive">Followers</p>
+
+            <div className="ai-insights-example__recommendation">
+              <div className="ai-recommendation-primary">
+                <span className="ai-recommendation-primary__icon">📊</span>
+                <p className="ai-recommendation-primary__text">
+                  Instagram Stories generate 2.3x more engagement when posted between 5-7 PM on weekdays. Consider scheduling future content during these peak hours to maximize reach.
+                </p>
+              </div>
             </div>
-            <div className="metric-card">
-              <p className="metric-card__label">YouTube</p>
-              <p className="metric-card__value">856K</p>
-              <p className="metric-card__change metric-card__change--positive">Subscribers</p>
+
+            <div className="ai-insights-example__additional">
+              <h4 className="ai-insights-example__section-title">Additional Recommendations</h4>
+              <ul className="ai-recommendations-list">
+                <li>
+                  <Icons.Check />
+                  <span>Carousel posts outperform single-image posts by 34% for this brand category</span>
+                </li>
+                <li>
+                  <Icons.Check />
+                  <span>Pairing product shots with athlete lifestyle content increases click-through rate by 18%</span>
+                </li>
+                <li>
+                  <Icons.Check />
+                  <span>Optimal hashtag strategy: mix 5 high-volume + 10 niche hashtags for 2.1x better discoverability</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Other Campaign Cards */}
+          <div className="campaign-grid" style={{ marginTop: '32px' }}>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Red Bull Promotion</p>
+                  <p className="campaign-card__brand">AI Analysis Complete</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">Needs Attention</span>
+              </div>
+              <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(226, 245, 0, 0.1)', borderRadius: '8px', fontSize: '0.85rem', color: 'var(--jaba-text-secondary)' }}>
+                <strong style={{ color: 'var(--jaba-accent)' }}>AI Insight:</strong> Engagement dropped 15% after week 2. Recommend refreshing creative assets and testing new hashtag strategy.
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Gatorade Spring Series</p>
+                  <p className="campaign-card__brand">AI Analysis Complete</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">Performing Well</span>
+              </div>
+              <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(226, 245, 0, 0.1)', borderRadius: '8px', fontSize: '0.85rem', color: 'var(--jaba-text-secondary)' }}>
+                <strong style={{ color: 'var(--jaba-accent)' }}>AI Insight:</strong> Sunday posts perform 40% better than weekdays. Behind-the-scenes content has highest share rate for this campaign.
+              </div>
             </div>
           </div>
         </div>
       )
-    case 'engagement':
+    case 'rankings':
       return (
-        <div className="feature-section" key="engagement">
-          <h2 className="feature-section__title">Engagement Analytics</h2>
+        <div className="feature-section" key="rankings">
+          <h2 className="feature-section__title">Performance Rankings & Leaderboards</h2>
           <p className="feature-section__description">
-            Deep dive into engagement metrics and audience interactions.
+            See which athletes are your top performers by marketability score and engagement, sorted by sport, conference, or school.
           </p>
-          <div className="chart-container">
-            <div className="chart-header">
-              <h3 className="chart-title">Engagement by Content Type</h3>
+          <div className="filter-section">
+            <div className="filter-group">
+              <label>Filter By</label>
+              <select className="filter-select" value={filterBy} onChange={(e) => setFilterBy(e.target.value)}>
+                <option>All Athletes</option>
+                <option>Football</option>
+                <option>Basketball</option>
+                <option>Track & Field</option>
+              </select>
             </div>
-            <div className="chart-bars">
-              <div className="chart-bar" style={{ height: '95%' }}><span className="chart-bar__label">Reels</span></div>
-              <div className="chart-bar" style={{ height: '75%' }}><span className="chart-bar__label">Stories</span></div>
-              <div className="chart-bar" style={{ height: '60%' }}><span className="chart-bar__label">Posts</span></div>
-              <div className="chart-bar" style={{ height: '45%' }}><span className="chart-bar__label">Lives</span></div>
+            <div className="filter-group">
+              <label>Sort By</label>
+              <select className="filter-select" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option>Marketability Score</option>
+                <option>Engagement Rate</option>
+                <option>Follower Count</option>
+                <option>EMV</option>
+              </select>
             </div>
           </div>
-        </div>
-      )
-    case 'trends':
-      return (
-        <div className="feature-section" key="trends">
-          <h2 className="feature-section__title">Trend Analysis</h2>
-          <p className="feature-section__description">
-            Identify trends and patterns in content performance over time.
-          </p>
-          <div className="campaign-grid">
-            <div className="campaign-card">
-              <div className="campaign-card__header">
-                <div>
-                  <p className="campaign-card__title">Peak Posting Time</p>
-                  <p className="campaign-card__brand">Based on 90-day analysis</p>
-                </div>
-              </div>
-              <p style={{ fontFamily: 'Anton', fontSize: '1.5rem', color: 'var(--jaba-accent)', marginTop: '12px' }}>6:00 PM - 8:00 PM</p>
-            </div>
-            <div className="campaign-card">
-              <div className="campaign-card__header">
-                <div>
-                  <p className="campaign-card__title">Best Performing Day</p>
-                  <p className="campaign-card__brand">Based on engagement rate</p>
-                </div>
-              </div>
-              <p style={{ fontFamily: 'Anton', fontSize: '1.5rem', color: 'var(--jaba-accent)', marginTop: '12px' }}>Sunday</p>
-            </div>
-            <div className="campaign-card">
-              <div className="campaign-card__header">
-                <div>
-                  <p className="campaign-card__title">Trending Hashtags</p>
-                  <p className="campaign-card__brand">This week</p>
-                </div>
-              </div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--jaba-accent)', marginTop: '12px' }}>#NIL #CollegeFootball #GameDay</p>
-            </div>
-          </div>
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Athlete</th>
+                <th>Sport</th>
+                <th>Marketability</th>
+                <th>Engagement</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedAthletes.map((athlete, index) => (
+                <tr key={athlete.name}>
+                  <td style={{ color: 'var(--jaba-accent)', fontWeight: 'bold' }}>{index + 1}</td>
+                  <td>{athlete.name}</td>
+                  <td>{athlete.sport}</td>
+                  <td><span style={{ color: 'var(--jaba-accent)' }}>{athlete.marketability}</span></td>
+                  <td>{athlete.engagement}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )
     default:
@@ -1112,7 +1069,7 @@ function MetricsContent({ activeSubFeature }) {
   }
 }
 
-function BrandDealsContent({ activeSubFeature }) {
+function CampaignsContent({ activeSubFeature }) {
   const campaigns = [
     { title: 'Summer Collection Launch', brand: 'Nike', status: 'active', progress: 75 },
     { title: 'Energy Drink Promotion', brand: 'Red Bull', status: 'pending', progress: 30 },
@@ -1120,12 +1077,12 @@ function BrandDealsContent({ activeSubFeature }) {
   ]
 
   switch (activeSubFeature) {
-    case 'campaign-planning':
+    case 'campaign-builder':
       return (
-        <div className="feature-section" key="campaign-planning">
-          <h2 className="feature-section__title">Campaign Planning Tools</h2>
+        <div className="feature-section" key="campaign-builder">
+          <h2 className="feature-section__title">Campaign Builder & Management</h2>
           <p className="feature-section__description">
-            Plan and organize brand campaigns from concept to execution.
+            Create campaigns from scratch, assign athletes, set deliverables, and track progress in real-time.
           </p>
           <div className="filter-section">
             <div className="filter-group">
@@ -1138,12 +1095,12 @@ function BrandDealsContent({ activeSubFeature }) {
               </select>
             </div>
             <div className="filter-group">
-              <label>Duration</label>
+              <label>Assign Athletes</label>
               <select className="filter-select">
-                <option>Select duration...</option>
-                <option>1 Week</option>
-                <option>1 Month</option>
-                <option>3 Months</option>
+                <option>Select athletes...</option>
+                <option>Brody Dalton</option>
+                <option>Judith Mokobe</option>
+                <option>Multiple Athletes</option>
               </select>
             </div>
             <div className="filter-group">
@@ -1157,16 +1114,7 @@ function BrandDealsContent({ activeSubFeature }) {
             </div>
           </div>
           <button className="search-btn">Create Campaign</button>
-        </div>
-      )
-    case 'execution':
-      return (
-        <div className="feature-section" key="execution">
-          <h2 className="feature-section__title">Execution Tracking</h2>
-          <p className="feature-section__description">
-            Track campaign execution milestones and deliverables.
-          </p>
-          <div className="campaign-grid">
+          <div className="campaign-grid" style={{ marginTop: '24px' }}>
             {campaigns.map((campaign, i) => (
               <div className="campaign-card" key={i}>
                 <div className="campaign-card__header">
@@ -1189,208 +1137,117 @@ function BrandDealsContent({ activeSubFeature }) {
           </div>
         </div>
       )
-    case 'monitoring':
+    case 'contracts':
       return (
-        <div className="feature-section" key="monitoring">
-          <h2 className="feature-section__title">Performance Monitoring</h2>
+        <div className="feature-section" key="contracts">
+          <h2 className="feature-section__title">Contract & Document Management</h2>
           <p className="feature-section__description">
-            Monitor campaign performance and ROI in real-time.
+            Build contracts, manage e-signatures, handle NDAs, and keep all campaign documents organized and tracked.
+          </p>
+          <div className="campaign-grid">
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Nike Partnership Agreement</p>
+                  <p className="campaign-card__brand">Brody Dalton • Contract</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--completed">Signed</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Red Bull NDA</p>
+                  <p className="campaign-card__brand">Judith Mokobe • NDA</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">Awaiting Signature</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Samsung Campaign Terms</p>
+                  <p className="campaign-card__brand">Multiple Athletes • Contract</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">In Review</span>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Gatorade Exclusivity</p>
+                  <p className="campaign-card__brand">Brody Dalton • Amendment</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--completed">Signed</span>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+            <button className="search-btn">Create New Contract</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Upload Document</button>
+          </div>
+        </div>
+      )
+    case 'task-tracking':
+      return (
+        <div className="feature-section" key="task-tracking">
+          <h2 className="feature-section__title">Task & Workflow Tracking</h2>
+          <p className="feature-section__description">
+            Keep your team aligned with task management, set deadlines, assign responsibilities, and track what's done vs. what's pending.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
-              <p className="metric-card__label">Campaign Reach</p>
-              <p className="metric-card__value">8.2M</p>
-              <p className="metric-card__change metric-card__change--positive">+32% vs target</p>
+              <p className="metric-card__label">Tasks Completed</p>
+              <p className="metric-card__value">24</p>
+              <p className="metric-card__change metric-card__change--positive">This week</p>
             </div>
             <div className="metric-card">
-              <p className="metric-card__label">Engagement Rate</p>
-              <p className="metric-card__value">12.4%</p>
-              <p className="metric-card__change metric-card__change--positive">+5% vs target</p>
+              <p className="metric-card__label">In Progress</p>
+              <p className="metric-card__value">8</p>
+              <p className="metric-card__change">Active tasks</p>
             </div>
             <div className="metric-card">
-              <p className="metric-card__label">Conversions</p>
-              <p className="metric-card__value">24.5K</p>
-              <p className="metric-card__change metric-card__change--positive">+18% vs target</p>
-            </div>
-            <div className="metric-card">
-              <p className="metric-card__label">ROI</p>
-              <p className="metric-card__value">340%</p>
-              <p className="metric-card__change metric-card__change--positive">Exceeds goal</p>
+              <p className="metric-card__label">Pending Review</p>
+              <p className="metric-card__value">5</p>
+              <p className="metric-card__change metric-card__change--negative">Needs attention</p>
             </div>
           </div>
-        </div>
-      )
-    case 'templates':
-      return (
-        <div className="feature-section" key="templates">
-          <h2 className="feature-section__title">Campaign Templates</h2>
-          <p className="feature-section__description">
-            Pre-built campaign templates for quick deployment.
-          </p>
-          <div className="campaign-grid">
-            {['Product Launch', 'Brand Ambassador', 'Social Takeover', 'Event Appearance'].map((template, i) => (
-              <div className="campaign-card" key={i}>
-                <div className="campaign-card__header">
-                  <div>
-                    <p className="campaign-card__title">{template}</p>
-                    <p className="campaign-card__brand">Ready-to-use template</p>
-                  </div>
+          <div className="campaign-grid" style={{ marginTop: '24px' }}>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Review Nike content drafts</p>
+                  <p className="campaign-card__brand">Assigned to: Marketing Team • Due: Tomorrow</p>
                 </div>
-                <button className="search-btn" style={{ marginTop: '16px', padding: '10px 20px', fontSize: '0.8rem' }}>
-                  Use Template
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      )
-    default:
-      return null
-  }
-}
-
-function AIToolsContent({ activeSubFeature }) {
-  const [generating, setGenerating] = useState(false)
-  const [output, setOutput] = useState('')
-
-  const generateContent = () => {
-    setGenerating(true)
-    setOutput('')
-    setTimeout(() => {
-      setGenerating(false)
-      setOutput('Game day vibes hit different when you know the work you put in. Every early morning, every rep, every sacrifice led to this moment. Ready to show out for the team and everyone who believed.')
-    }, 2000)
-  }
-
-  switch (activeSubFeature) {
-    case 'content-gen':
-      return (
-        <div className="feature-section" key="content-gen">
-          <h2 className="feature-section__title">AI Content Generation</h2>
-          <p className="feature-section__description">
-            Generate engaging content tailored to the athlete&apos;s voice and brand.
-          </p>
-          <div className="ai-generator">
-            <div className="ai-input-area">
-              <textarea
-                className="ai-input"
-                placeholder="Describe the content you want to create..."
-                defaultValue="Create an Instagram caption for a game day post showing preparation and team spirit"
-              />
-              <button className="ai-generate-btn" onClick={generateContent} disabled={generating}>
-                <Icons.Sparkles />
-                {generating ? 'Generating...' : 'Generate Content'}
-              </button>
-            </div>
-            <div className="ai-output">
-              <p className="ai-output__label">Generated Content</p>
-              <div className="ai-output__content">
-                {generating ? (
-                  <div className="loading">
-                    <div className="loading__spinner"></div>
-                    <p className="loading__text">AI is creating content...</p>
-                  </div>
-                ) : output ? (
-                  <p>{output}</p>
-                ) : (
-                  <p style={{ color: 'var(--jaba-text-muted)' }}>Your generated content will appear here...</p>
-                )}
+                <span className="campaign-card__status campaign-card__status--pending">Pending</span>
               </div>
             </div>
-          </div>
-        </div>
-      )
-    case 'captions':
-      return (
-        <div className="feature-section" key="captions">
-          <h2 className="feature-section__title">Automated Caption Writing</h2>
-          <p className="feature-section__description">
-            AI-powered caption generation for all your social media needs.
-          </p>
-          <div className="filter-section">
-            <div className="filter-group">
-              <label>Platform</label>
-              <select className="filter-select">
-                <option>Instagram</option>
-                <option>TikTok</option>
-                <option>Twitter/X</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Tone</label>
-              <select className="filter-select">
-                <option>Motivational</option>
-                <option>Casual</option>
-                <option>Professional</option>
-                <option>Humorous</option>
-              </select>
-            </div>
-            <div className="filter-group">
-              <label>Content Type</label>
-              <select className="filter-select">
-                <option>Game Day</option>
-                <option>Training</option>
-                <option>Lifestyle</option>
-                <option>Sponsored</option>
-              </select>
-            </div>
-          </div>
-          <button className="search-btn">Generate Captions</button>
-        </div>
-      )
-    case 'suggestions':
-      return (
-        <div className="feature-section" key="suggestions">
-          <h2 className="feature-section__title">Content Suggestions</h2>
-          <p className="feature-section__description">
-            AI-curated content ideas based on trending topics and audience preferences.
-          </p>
-          <div className="campaign-grid">
-            {[
-              { title: 'Training Montage', desc: 'High engagement potential' },
-              { title: 'Day in My Life', desc: 'Trending format' },
-              { title: 'Q&A with Fans', desc: 'Community building' },
-              { title: 'Pre-Game Routine', desc: 'Behind the scenes' },
-            ].map((suggestion, i) => (
-              <div className="campaign-card" key={i}>
-                <div className="campaign-card__header">
-                  <div>
-                    <p className="campaign-card__title">{suggestion.title}</p>
-                    <p className="campaign-card__brand">{suggestion.desc}</p>
-                  </div>
-                  <span className="campaign-card__status campaign-card__status--active">Suggested</span>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Schedule athlete photo shoot</p>
+                  <p className="campaign-card__brand">Assigned to: Operations • Due: Jan 31</p>
                 </div>
+                <span className="campaign-card__status campaign-card__status--active">In Progress</span>
               </div>
-            ))}
-          </div>
-        </div>
-      )
-    case 'recommendations':
-      return (
-        <div className="feature-section" key="recommendations">
-          <h2 className="feature-section__title">Smart Recommendations</h2>
-          <p className="feature-section__description">
-            Personalized recommendations to optimize content strategy.
-          </p>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.TrendingUp /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Post more Reels</p>
-              <p className="reminder-card__time">Reels get 3x more engagement than static posts</p>
             </div>
-          </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.Target /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Optimal posting time: 6-8 PM</p>
-              <p className="reminder-card__time">Your audience is most active during these hours</p>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Send Red Bull deliverables</p>
+                  <p className="campaign-card__brand">Assigned to: Content Team • Due: Feb 3</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">In Progress</span>
+              </div>
             </div>
-          </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.Sparkles /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Trending audio available</p>
-              <p className="reminder-card__time">5 trending sounds match your content style</p>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Finalize Samsung contract</p>
+                  <p className="campaign-card__brand">Assigned to: Legal • Due: Feb 5</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">Pending</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1402,145 +1259,184 @@ function AIToolsContent({ activeSubFeature }) {
 
 function AboveCapContent({ activeSubFeature }) {
   switch (activeSubFeature) {
-    case 'financial-planning':
+    case 'rate-cards':
       return (
-        <div className="feature-section" key="financial-planning">
-          <h2 className="feature-section__title">Financial Planning</h2>
+        <div className="feature-section" key="rate-cards">
+          <h2 className="feature-section__title">Deal Valuation & Rate Cards</h2>
           <p className="feature-section__description">
-            Comprehensive financial planning tools for athlete earnings and investments.
-          </p>
-          <div className="financial-grid">
-            <div className="financial-card">
-              <div className="financial-card__icon"><Icons.Wallet /></div>
-              <p className="financial-card__label">Total NIL Earnings (YTD)</p>
-              <p className="financial-card__value">$<span>2.4M</span></p>
-            </div>
-            <div className="financial-card">
-              <div className="financial-card__icon"><Icons.TrendingUp /></div>
-              <p className="financial-card__label">Projected Annual</p>
-              <p className="financial-card__value">$<span>3.2M</span></p>
-            </div>
-            <div className="financial-card">
-              <div className="financial-card__icon"><Icons.Target /></div>
-              <p className="financial-card__label">Active Deals</p>
-              <p className="financial-card__value"><span>12</span></p>
-            </div>
-          </div>
-        </div>
-      )
-    case 'deal-management':
-      return (
-        <div className="feature-section" key="deal-management">
-          <h2 className="feature-section__title">Deal Management</h2>
-          <p className="feature-section__description">
-            Track and manage all active and pending brand deals.
+            Set and manage pricing for different deliverables (Instagram posts, TikTok videos, in-person appearances, etc.) with customizable rate cards.
           </p>
           <table className="data-table">
             <thead>
               <tr>
-                <th>Brand</th>
-                <th>Deal Value</th>
-                <th>Duration</th>
-                <th>Status</th>
+                <th>Deliverable Type</th>
+                <th>Base Rate</th>
+                <th>Premium Rate</th>
+                <th>Usage Rights</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Nike</td>
-                <td>$500,000</td>
-                <td>2 Years</td>
-                <td><span className="campaign-card__status campaign-card__status--active">Active</span></td>
+                <td>Instagram Post</td>
+                <td>$2,500</td>
+                <td>$4,000</td>
+                <td>+25%</td>
               </tr>
               <tr>
-                <td>Gatorade</td>
-                <td>$250,000</td>
-                <td>1 Year</td>
-                <td><span className="campaign-card__status campaign-card__status--active">Active</span></td>
+                <td>Instagram Story</td>
+                <td>$1,000</td>
+                <td>$1,800</td>
+                <td>+15%</td>
               </tr>
               <tr>
-                <td>Samsung</td>
-                <td>$150,000</td>
-                <td>6 Months</td>
-                <td><span className="campaign-card__status campaign-card__status--pending">Pending</span></td>
+                <td>TikTok Video</td>
+                <td>$3,500</td>
+                <td>$5,500</td>
+                <td>+30%</td>
               </tr>
               <tr>
-                <td>Red Bull</td>
-                <td>$100,000</td>
-                <td>1 Year</td>
-                <td><span className="campaign-card__status campaign-card__status--completed">Completed</span></td>
+                <td>In-Person Appearance</td>
+                <td>$5,000</td>
+                <td>$10,000</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>Product Endorsement</td>
+                <td>$7,500</td>
+                <td>$15,000</td>
+                <td>+50%</td>
               </tr>
             </tbody>
           </table>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+            <button className="search-btn">Edit Rate Card</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)', color: 'var(--jaba-accent)' }}>Create New Template</button>
+          </div>
         </div>
       )
-    case 'contract-tracking':
+    case 'budgets':
       return (
-        <div className="feature-section" key="contract-tracking">
-          <h2 className="feature-section__title">Contract Tracking</h2>
+        <div className="feature-section" key="budgets">
+          <h2 className="feature-section__title">Spending Plans & Budgets</h2>
           <p className="feature-section__description">
-            Monitor contract milestones, deliverables, and renewal dates.
+            Track total NIL spending across your program, set budget limits by athlete or sport, and see where your dollars are going.
           </p>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.FileText /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Nike Contract Renewal</p>
-              <p className="reminder-card__time">Due in 45 days</p>
+          <div className="financial-grid">
+            <div className="financial-card">
+              <div className="financial-card__icon"><Icons.Wallet /></div>
+              <p className="financial-card__label">Total Budget (2025)</p>
+              <p className="financial-card__value">$<span>2.4M</span></p>
             </div>
-            <button className="reminder-card__action">Review</button>
+            <div className="financial-card">
+              <div className="financial-card__icon"><Icons.TrendingUp /></div>
+              <p className="financial-card__label">Spent YTD</p>
+              <p className="financial-card__value">$<span>890K</span></p>
+            </div>
+            <div className="financial-card">
+              <div className="financial-card__icon"><Icons.Target /></div>
+              <p className="financial-card__label">Remaining</p>
+              <p className="financial-card__value">$<span>1.51M</span></p>
+            </div>
           </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.FileText /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Gatorade Deliverable</p>
-              <p className="reminder-card__time">3 posts remaining this quarter</p>
+          <div className="campaign-grid" style={{ marginTop: '24px' }}>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Football</p>
+                  <p className="campaign-card__brand">$450K of $800K budget</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">56% Used</span>
+              </div>
+              <div className="campaign-card__progress">
+                <div className="progress-bar">
+                  <div className="progress-bar__fill" style={{ width: '56%' }} />
+                </div>
+              </div>
             </div>
-            <button className="reminder-card__action">View</button>
-          </div>
-          <div className="reminder-card">
-            <div className="reminder-card__icon"><Icons.FileText /></div>
-            <div className="reminder-card__content">
-              <p className="reminder-card__title">Samsung Payment</p>
-              <p className="reminder-card__time">$75,000 due on Feb 15</p>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Basketball</p>
+                  <p className="campaign-card__brand">$280K of $500K budget</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--active">56% Used</span>
+              </div>
+              <div className="campaign-card__progress">
+                <div className="progress-bar">
+                  <div className="progress-bar__fill" style={{ width: '56%' }} />
+                </div>
+              </div>
             </div>
-            <button className="reminder-card__action">Details</button>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Track & Field</p>
+                  <p className="campaign-card__brand">$95K of $200K budget</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">48% Used</span>
+              </div>
+              <div className="campaign-card__progress">
+                <div className="progress-bar">
+                  <div className="progress-bar__fill" style={{ width: '48%' }} />
+                </div>
+              </div>
+            </div>
+            <div className="campaign-card">
+              <div className="campaign-card__header">
+                <div>
+                  <p className="campaign-card__title">Other Sports</p>
+                  <p className="campaign-card__brand">$65K of $150K budget</p>
+                </div>
+                <span className="campaign-card__status campaign-card__status--pending">43% Used</span>
+              </div>
+              <div className="campaign-card__progress">
+                <div className="progress-bar">
+                  <div className="progress-bar__fill" style={{ width: '43%' }} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )
-    case 'revenue':
+    case 'reporting':
       return (
-        <div className="feature-section" key="revenue">
-          <h2 className="feature-section__title">Revenue Analytics</h2>
+        <div className="feature-section" key="reporting">
+          <h2 className="feature-section__title">Financial Reporting</h2>
           <p className="feature-section__description">
-            Track revenue streams and analyze financial performance.
+            Get comprehensive reports on program profitability, deal ROI, revenue by athlete, and financial analytics to justify your NIL investments.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
-              <p className="metric-card__label">Q1 Revenue</p>
-              <p className="metric-card__value">$580K</p>
-              <p className="metric-card__change metric-card__change--positive">+22% vs Q4</p>
+              <p className="metric-card__label">Total Program ROI</p>
+              <p className="metric-card__value">340%</p>
+              <p className="metric-card__change metric-card__change--positive">+45% vs last year</p>
             </div>
             <div className="metric-card">
-              <p className="metric-card__label">Avg Deal Size</p>
-              <p className="metric-card__value">$125K</p>
-              <p className="metric-card__change metric-card__change--positive">+15% YoY</p>
+              <p className="metric-card__label">Avg Deal ROI</p>
+              <p className="metric-card__value">285%</p>
+              <p className="metric-card__change metric-card__change--positive">+18% vs target</p>
             </div>
             <div className="metric-card">
-              <p className="metric-card__label">Pipeline Value</p>
-              <p className="metric-card__value">$1.2M</p>
-              <p className="metric-card__change metric-card__change--positive">4 deals</p>
+              <p className="metric-card__label">Revenue Generated</p>
+              <p className="metric-card__value">$3.2M</p>
+              <p className="metric-card__change metric-card__change--positive">From $890K spend</p>
             </div>
           </div>
-          <div className="chart-container">
+          <div className="chart-container" style={{ marginTop: '24px' }}>
             <div className="chart-header">
-              <h3 className="chart-title">Monthly Revenue</h3>
+              <h3 className="chart-title">Monthly ROI Performance</h3>
             </div>
             <div className="chart-bars">
               {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'].map((month, i) => (
-                <div key={i} className="chart-bar" style={{ height: `${50 + Math.random() * 45}%` }}>
+                <div key={i} className="chart-bar" style={{ height: `${60 + i * 8}%` }}>
                   <span className="chart-bar__label">{month}</span>
                 </div>
               ))}
             </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+            <button className="search-btn">Generate Full Report</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Export to PDF</button>
           </div>
         </div>
       )
@@ -1556,18 +1452,14 @@ function FeatureModal({ feature, onClose }) {
 
   const renderContent = () => {
     switch (feature.id) {
-      case 'compliance':
-        return <ComplianceContent activeSubFeature={activeSubFeature} />
+      case 'roster':
+        return <RosterContent activeSubFeature={activeSubFeature} />
+      case 'campaigns':
+        return <CampaignsContent activeSubFeature={activeSubFeature} />
+      case 'analytics':
+        return <AnalyticsContent activeSubFeature={activeSubFeature} />
       case 'relationships':
         return <RelationshipsContent activeSubFeature={activeSubFeature} />
-      case 'athlete-tools':
-        return <AthleteToolsContent activeSubFeature={activeSubFeature} />
-      case 'metrics':
-        return <MetricsContent activeSubFeature={activeSubFeature} />
-      case 'brand-deals':
-        return <BrandDealsContent activeSubFeature={activeSubFeature} />
-      case 'ai-tools':
-        return <AIToolsContent activeSubFeature={activeSubFeature} />
       case 'above-cap':
         return <AboveCapContent activeSubFeature={activeSubFeature} />
       default:
