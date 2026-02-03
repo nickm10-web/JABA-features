@@ -82,6 +82,12 @@
   gap: 24px;
 }
 
+.feature-grid > *:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 12px);
+}
+
 @media (max-width: 900px) {
   .feature-grid {
     grid-template-columns: 1fr;
@@ -1362,7 +1368,7 @@
 }
 
 .financial-card__value span {
-  color: var(--jaba-accent);
+  color: var(--jaba-text-primary);
 }
 
 /* Pipeline View */

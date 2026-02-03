@@ -444,7 +444,7 @@ function RelationshipsContent({ activeSubFeature }) {
           </table>
           <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
             <button className="search-btn">Add New Contact</button>
-            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Import Contacts</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)', color: 'var(--jaba-accent)' }}>Import Contacts</button>
           </div>
         </div>
       )
@@ -1184,7 +1184,7 @@ function CampaignsContent({ activeSubFeature }) {
           </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
             <button className="search-btn">Create New Contract</button>
-            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Upload Document</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)', color: 'var(--jaba-accent)' }}>Upload Document</button>
           </div>
         </div>
       )
@@ -1436,7 +1436,7 @@ function AboveCapContent({ activeSubFeature }) {
           </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
             <button className="search-btn">Generate Full Report</button>
-            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)' }}>Export to PDF</button>
+            <button className="search-btn" style={{ background: 'transparent', border: '1px solid var(--jaba-accent)', color: 'var(--jaba-accent)' }}>Export to PDF</button>
           </div>
         </div>
       )
