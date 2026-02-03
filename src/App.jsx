@@ -65,6 +65,11 @@ const Icons = {
       <polyline points="9 18 15 12 9 6"/>
     </svg>
   ),
+  ChevronLeft: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="15 18 9 12 15 6"/>
+    </svg>
+  ),
   X: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="6" x2="6" y2="18"/>
@@ -203,7 +208,7 @@ const features = [
     id: 'roster',
     icon: Icons.Users,
     title: 'Manage Your Roster',
-    description: 'Search, filter, view athlete marketability scores, and monitor performance metrics in one place.',
+    description: 'Know every athlete\'s potential. Track their rise. Monitor every metric that matters.',
     subFeatures: [
       { id: 'profiles', title: 'Athlete Profiles & Marketability Scoring' },
       { id: 'media-kits', title: 'Professional Media Kits' },
@@ -214,7 +219,7 @@ const features = [
     id: 'campaigns',
     icon: Icons.Target,
     title: 'Execute Campaigns & Deals',
-    description: 'Create, manage, and track all NIL campaigns end-to-end for any athlete.',
+    description: 'Launch campaigns faster. Close deals with confidence. Never miss a beat.',
     subFeatures: [
       { id: 'campaign-builder', title: 'Campaign Builder & Management' },
       { id: 'contracts', title: 'Contract & Document Management' },
@@ -225,7 +230,7 @@ const features = [
     id: 'analytics',
     icon: Icons.BarChart,
     title: 'Analytics & Performance',
-    description: 'Centralized dashboard showing ROI across all athletes and deals with real-time performance insights.',
+    description: 'Watch your deals come alive in real-time. See ROI instantly. Make smarter moves every day.',
     subFeatures: [
       { id: 'metrics-dashboard', title: 'Real-time Metrics Dashboard' },
       { id: 'ai-insights', title: 'AI Campaign Insights' },
@@ -236,7 +241,7 @@ const features = [
     id: 'relationships',
     icon: Icons.Smile,
     title: 'Build Relationships',
-    description: 'Track all brand and partner relationships, manage verified contacts, and view complete deal history with every organization.',
+    description: 'Build your network. Strengthen your partnerships. Own every relationship.',
     subFeatures: [
       { id: 'brand-discovery', title: 'Brand Discovery & CRM' },
       { id: 'contact-management', title: 'Contact Management' },
@@ -247,7 +252,7 @@ const features = [
     id: 'above-cap',
     icon: Icons.DollarSign,
     title: 'Above The Cap',
-    description: 'Comprehensive financial planning and deal management tools.',
+    description: 'Master your money. Maximize deal value. Never leave money on the table.',
     subFeatures: [
       { id: 'rate-cards', title: 'Deal Valuation & Rate Cards' },
       { id: 'budgets', title: 'Spending Plans & Budgets' },
@@ -349,7 +354,7 @@ function RelationshipsContent({ activeSubFeature }) {
         <div className="feature-section" key="brand-discovery">
           <h2 className="feature-section__title">Brand Discovery & CRM</h2>
           <p className="feature-section__description">
-            Search and discover new potential brand sponsors, then track all interactions and opportunities in one organized CRM.
+            Stop cold-calling brands. Smart discovery shows you ready-to-partner brands actively looking for athletes like yours.
           </p>
           <div className="filter-section">
             <div className="filter-group">
@@ -409,7 +414,7 @@ function RelationshipsContent({ activeSubFeature }) {
         <div className="feature-section" key="contact-management">
           <h2 className="feature-section__title">Contact Management</h2>
           <p className="feature-section__description">
-            Store verified brand contacts, track communication history, manage relationships, and know who to reach out to for new opportunities.
+            Every contact, every interaction, all organized. Never lose a relationship or miss a follow-up again.
           </p>
           <table className="data-table">
             <thead>
@@ -453,7 +458,7 @@ function RelationshipsContent({ activeSubFeature }) {
         <div className="feature-section" key="deal-history">
           <h2 className="feature-section__title">Deal History & Tracking</h2>
           <p className="feature-section__description">
-            See the complete history of every brand partnership - which athletes have worked with which companies, past deal terms, and relationship insights.
+            Institutional memory for your NIL program. Track what worked, who's interested, and opportunities for next time.
           </p>
           <div className="filter-section">
             <div className="filter-group">
@@ -543,7 +548,7 @@ function RosterContent({ activeSubFeature }) {
         <div className="feature-section" key="profiles">
           <h2 className="feature-section__title">Athlete Profiles & Marketability Scoring</h2>
           <p className="feature-section__description">
-            View all athletes with detailed profiles, filter by sport/position, and see real-time marketability scores.
+            Know your athletes' market value instantly. See who's ready for deals. Filter by sport, position, or opportunity readiness.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
             {athletes.slice(0, 2).map(athlete => (
@@ -557,7 +562,7 @@ function RosterContent({ activeSubFeature }) {
         <div className="feature-section" key="media-kits">
           <h2 className="feature-section__title">Professional Media Kits</h2>
           <p className="feature-section__description">
-            AI-powered media kit builder that generates brand-specific partnership ideas, custom rate cards, and professional PDF exports ready to send to sponsors.
+            Professional-grade media kits ready in minutes. Athletes impress brands. Brands make offers. Everyone wins.
           </p>
 
           {/* 5-Step Flow */}
@@ -756,7 +761,7 @@ function RosterContent({ activeSubFeature }) {
         <div className="feature-section" key="content-performance">
           <h2 className="feature-section__title">Track Content Performance</h2>
           <p className="feature-section__description">
-            See which content themes resonate most with audiences - track top posts, engagement rates, and social media performance across your roster.
+            Stop guessing on content strategy. Real data shows you exactly what resonates with audiences and brands.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -870,7 +875,7 @@ function AnalyticsContent({ activeSubFeature }) {
         <div className="feature-section" key="metrics-dashboard">
           <h2 className="feature-section__title">Real-time Metrics Dashboard</h2>
           <p className="feature-section__description">
-            Track likes, engagement rates, shares, and follower growth across all athletes' social media in one centralized view.
+            Watch your NIL program come alive. See impressions, engagement, followers, and trends as they happen.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -916,7 +921,7 @@ function AnalyticsContent({ activeSubFeature }) {
         <div className="feature-section" key="ai-insights">
           <h2 className="feature-section__title">AI Campaign Insights</h2>
           <p className="feature-section__description">
-            Get AI-powered analysis of your campaign performance — understand what's working, what's not, and get optimization recommendations.
+            Let AI do the heavy lifting. Predictive analytics show you the path to your best NIL opportunities.
           </p>
 
           {/* AI Insights Example Card */}
@@ -1018,7 +1023,7 @@ function AnalyticsContent({ activeSubFeature }) {
         <div className="feature-section" key="rankings">
           <h2 className="feature-section__title">Performance Rankings & Leaderboards</h2>
           <p className="feature-section__description">
-            See which athletes are your top performers by marketability score and engagement, sorted by sport, conference, or school.
+            Leaderboards that inspire. Celebrate your top performers and identify the next breakout NIL stars.
           </p>
           <div className="filter-section">
             <div className="filter-group">
@@ -1082,7 +1087,7 @@ function CampaignsContent({ activeSubFeature }) {
         <div className="feature-section" key="campaign-builder">
           <h2 className="feature-section__title">Campaign Builder & Management</h2>
           <p className="feature-section__description">
-            Create campaigns from scratch, assign athletes, set deliverables, and track progress in real-time.
+            Stop juggling emails and spreadsheets. Build, assign, and track NIL campaigns that actually get delivered.
           </p>
           <div className="filter-section">
             <div className="filter-group">
@@ -1142,7 +1147,7 @@ function CampaignsContent({ activeSubFeature }) {
         <div className="feature-section" key="contracts">
           <h2 className="feature-section__title">Contract & Document Management</h2>
           <p className="feature-section__description">
-            Build contracts, manage e-signatures, handle NDAs, and keep all campaign documents organized and tracked.
+            Legal protection that doesn't slow you down. Smart contracts built for NIL. Everything signed, stored, and searchable.
           </p>
           <div className="campaign-grid">
             <div className="campaign-card">
@@ -1193,7 +1198,7 @@ function CampaignsContent({ activeSubFeature }) {
         <div className="feature-section" key="task-tracking">
           <h2 className="feature-section__title">Task & Workflow Tracking</h2>
           <p className="feature-section__description">
-            Keep your team aligned with task management, set deadlines, assign responsibilities, and track what's done vs. what's pending.
+            Deadlines met. Deliverables delivered. Teams aligned. Every athlete knows exactly what they need to do.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -1264,7 +1269,7 @@ function AboveCapContent({ activeSubFeature }) {
         <div className="feature-section" key="rate-cards">
           <h2 className="feature-section__title">Deal Valuation & Rate Cards</h2>
           <p className="feature-section__description">
-            Set and manage pricing for different deliverables (Instagram posts, TikTok videos, in-person appearances, etc.) with customizable rate cards.
+            Price your athletes right. Customizable rate cards for every deliverable type. Data-driven valuation meets market reality.
           </p>
           <table className="data-table">
             <thead>
@@ -1319,7 +1324,7 @@ function AboveCapContent({ activeSubFeature }) {
         <div className="feature-section" key="budgets">
           <h2 className="feature-section__title">Spending Plans & Budgets</h2>
           <p className="feature-section__description">
-            Track total NIL spending across your program, set budget limits by athlete or sport, and see where your dollars are going.
+            Total control. See your full NIL spend, optimize allocations, and prove ROI to leadership.
           </p>
           <div className="financial-grid">
             <div className="financial-card">
@@ -1403,7 +1408,7 @@ function AboveCapContent({ activeSubFeature }) {
         <div className="feature-section" key="reporting">
           <h2 className="feature-section__title">Financial Reporting</h2>
           <p className="feature-section__description">
-            Get comprehensive reports on program profitability, deal ROI, revenue by athlete, and financial analytics to justify your NIL investments.
+            Compliance-ready reporting. Show leadership the numbers. Show NCAA compliance. Show the real story of your NIL success.
           </p>
           <div className="metrics-grid">
             <div className="metric-card">
@@ -1474,6 +1479,10 @@ function FeatureModal({ feature, onClose }) {
           <Icons.X />
         </button>
         <div className="modal__content">
+          <button className="modal__back" onClick={onClose}>
+            <Icons.ChevronLeft />
+            <span>Back to Features</span>
+          </button>
           <div className="modal__header">
             <div className="modal__icon">
               <Icon />
@@ -1511,10 +1520,10 @@ function App() {
         <header className="header">
           <div className="header__logo-container">
             <img src="/jaba-logo.png" alt="JABA" className="header__logo" />
-            <h1 className="header__title">Feature Overview</h1>
+            <h1 className="header__title">Every tool your NIL department needs to succeed</h1>
           </div>
           <p className="header__subtitle">
-            A comprehensive view of all JABA features and capabilities in one place
+            AI that makes NIL management effortless. So your athletes can stay focused on winning.
           </p>
         </header>
 
