@@ -1520,10 +1520,10 @@ function App() {
         <header className="header">
           <div className="header__logo-container">
             <img src="/jaba-logo.png" alt="JABA" className="header__logo" />
-            <h1 className="header__title">Every tool your NIL department needs to succeed</h1>
+            <h1 className="header__title">AI built for NIL departments</h1>
           </div>
           <p className="header__subtitle">
-            AI that makes NIL management effortless. So your athletes can stay focused on winning.
+            JABA handles the manual work so you can scale your NIL operations.
           </p>
         </header>
 
