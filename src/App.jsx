@@ -994,7 +994,7 @@ function ManageCampaignsDealsContent({ activeSubFeature }) {
             cursor: 'pointer',
             transition: 'all 0.2s ease'
           }}>
-            <div style={{ marginBottom: '16px' }}>
+            <div style={{ width: '48px', height: '48px', margin: '0 auto 16px' }}>
               <Icons.FileText />
             </div>
             <p style={{ color: 'var(--jaba-text-primary)', fontWeight: '600', marginBottom: '8px' }}>
@@ -1099,12 +1099,12 @@ function ContentHubContent({ activeSubFeature }) {
   const [topicFilter, setTopicFilter] = useState('All')
 
   const socialPosts = [
-    { id: 1, athlete: 'Brody Dalton', platform: 'Instagram', topic: 'Game Day', likes: 48200, comments: 892, date: 'Feb 1', image: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=400&fit=crop', trending: true },
-    { id: 2, athlete: 'Judith Mokobe', platform: 'TikTok', topic: 'Training', likes: 125400, comments: 2341, date: 'Jan 30', image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=400&fit=crop', trending: true },
-    { id: 3, athlete: 'Marcus Johnson', platform: 'Instagram', topic: 'Lifestyle', likes: 32100, comments: 445, date: 'Jan 29', image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=400&fit=crop', trending: false },
-    { id: 4, athlete: 'Sarah Chen', platform: 'TikTok', topic: 'Game Day', likes: 89700, comments: 1203, date: 'Jan 28', image: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&h=400&fit=crop', trending: true },
-    { id: 5, athlete: 'Brody Dalton', platform: 'Instagram', topic: 'Sponsored', likes: 28400, comments: 367, date: 'Jan 27', image: 'https://images.unsplash.com/photo-1461896836934-480adeac82e9?w=400&h=400&fit=crop', trending: false },
-    { id: 6, athlete: 'Laila Wilcox', platform: 'TikTok', topic: 'Training', likes: 67300, comments: 890, date: 'Jan 26', image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=400&fit=crop', trending: false },
+    { id: 1, athlete: 'Emmett Mosley V', platform: 'Instagram', topic: 'Game Day', likes: 51567, comments: 380, date: 'Jan 28', image: 'https://storage.googleapis.com/scraper-media-images/18040647368285326', trending: true, tag: '#4 Big 12' },
+    { id: 2, athlete: 'Jaime Ffrench', platform: 'Instagram', topic: 'Game Day', likes: 42630, comments: 663, date: 'Jan 25', image: 'https://storage.googleapis.com/scraper-media-images/18088579030745089', trending: true, tag: '#4 Big 12' },
+    { id: 3, athlete: 'CJ Baxter', platform: 'Instagram', topic: 'Lifestyle', likes: 27801, comments: 233, date: 'Jan 22', image: 'https://storage.googleapis.com/scraper-media-images/17932624247962863', trending: true, tag: '#4 Big 12' },
+    { id: 4, athlete: 'Elliot Cadeau', platform: 'Instagram', topic: 'Game Day', likes: 24317, comments: 209, date: 'Jan 20', image: 'https://storage.googleapis.com/scraper-media-images/18050801381599626', trending: true, tag: '#12 ACC' },
+    { id: 5, athlete: 'Ven-Allen Lubin', platform: 'Instagram', topic: 'Sponsored', likes: 23509, comments: 1387, date: 'Jan 18', image: 'https://storage.googleapis.com/scraper-media-images/17956085492814367', trending: true, tag: '#12 ACC' },
+    { id: 6, athlete: 'Seth Trimble', platform: 'TikTok', topic: 'Training', likes: 16212, comments: 113, date: 'Jan 15', image: 'https://storage.googleapis.com/scraper-media-images/17906787753033700', trending: false, tag: '#12 ACC' },
   ]
 
   const filteredPosts = socialPosts.filter(post => {
@@ -1221,11 +1221,30 @@ function ContentHubContent({ activeSubFeature }) {
                 </div>
                 <div style={{ padding: '12px' }}>
                   <p style={{ fontWeight: '600', marginBottom: '4px', fontSize: '0.9rem' }}>{post.athlete}</p>
+                  <div style={{ display: 'flex', gap: '6px', marginTop: '6px', flexWrap: 'wrap' }}>
+                    <span style={{
+                      background: post.topic === 'Game Day' ? 'rgba(234, 179, 8, 0.2)' : post.topic === 'Sponsored' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(139, 92, 246, 0.2)',
+                      color: post.topic === 'Game Day' ? '#EAB308' : post.topic === 'Sponsored' ? '#22C55E' : '#8B5CF6',
+                      padding: '2px 8px',
+                      borderRadius: '4px',
+                      fontSize: '0.7rem',
+                      fontWeight: '600'
+                    }}>{post.topic}</span>
+                    {post.tag && (
+                      <span style={{
+                        background: 'rgba(226, 245, 0, 0.15)',
+                        color: 'var(--jaba-accent)',
+                        padding: '2px 8px',
+                        borderRadius: '4px',
+                        fontSize: '0.7rem',
+                        fontWeight: '600'
+                      }}>{post.tag}</span>
+                    )}
+                  </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
                     <span style={{ color: 'var(--jaba-text-secondary)', fontSize: '0.8rem' }}>
-                      ❤️ {(post.likes / 1000).toFixed(1)}K
+                      ❤️ {(post.likes / 1000).toFixed(1)}K  💬 {post.comments}
                     </span>
-                    <span style={{ color: 'var(--jaba-text-secondary)', fontSize: '0.75rem' }}>{post.date}</span>
                   </div>
                 </div>
               </div>
